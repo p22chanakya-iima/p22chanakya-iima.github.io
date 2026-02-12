@@ -1,0 +1,36 @@
+{
+  "experience": [
+    {
+      "id": "iima",
+      "company": "IIM Ahmedabad",
+      "role": "MBA Candidate",
+      "type": "Education",
+      "date_start": "2022",
+      "date_end": "2024",
+      "current": false,
+      "description": "Pursuing MBA with a focus on technology product management and business strategy.",
+      "achievements": [
+        "Led product strategy projects with industry partners",
+        "Built multiple side projects including Brand Size Matcher",
+        "Active in entrepreneurship and technology clubs"
+      ],
+      "logo": "IIMA"
+    },
+    {
+      "id": "previous-role",
+      "company": "Your Previous Company",
+      "role": "Your Previous Role",
+      "type": "Work",
+      "date_start": "2020",
+      "date_end": "2022",
+      "current": false,
+      "description": "Brief description of what you did and the impact you made.",
+      "achievements": [
+        "Achievement 1 with quantifiable impact",
+        "Achievement 2 describing a key project",
+        "Achievement 3 showing leadership or growth"
+      ],
+      "logo": "Co"
+    }
+  ]
+}

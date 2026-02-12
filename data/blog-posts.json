@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": "how-i-validate-product-ideas",
+      "title": "How I Validate Product Ideas in 48 Hours",
+      "date": "2026-02-10",
+      "tags": ["Product Management", "Validation", "Lean"],
+      "excerpt": "Most product ideas fail not because they're bad, but because we spend too long building before validating. Here's my 48-hour framework for going from idea to evidence.",
+      "content_file": "blog/posts/how-i-validate-product-ideas.md",
+      "featured": true
+    },
+    {
+      "id": "building-for-indian-consumers",
+      "title": "What I Learned Building for Indian Consumers",
+      "date": "2026-02-05",
+      "tags": ["India", "Consumer Tech", "Lessons"],
+      "excerpt": "Building Brand Size Matcher taught me that Indian consumers have unique needs that global products often ignore. Here are the patterns I discovered.",
+      "content_file": "blog/posts/building-for-indian-consumers.md",
+      "featured": true
+    },
+    {
+      "id": "pm-frameworks-that-actually-work",
+      "title": "3 PM Frameworks That Actually Work (And 3 That Don't)",
+      "date": "2026-01-20",
+      "tags": ["Product Management", "Frameworks", "Strategy"],
+      "excerpt": "After years of trying every framework in the book, I've narrowed down to three that consistently help me make better product decisions.",
+      "content_file": "blog/posts/pm-frameworks-that-actually-work.md",
+      "featured": false
+    }
+  ]
+}

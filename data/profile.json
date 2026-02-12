@@ -1,0 +1,47 @@
+{
+  "name": "Chanakya Yadav",
+  "title": "Product Manager & Builder",
+  "tagline": "I build products that solve real problems.",
+  "bio": [
+    "I'm a Product Manager who believes great products come from deeply understanding people and their problems. I combine analytical thinking with creative problem-solving to build things that matter.",
+    "Currently pursuing my MBA at IIM Ahmedabad, I bring a builder's mindset to everything I do. I love the intersection of technology, design, and business strategy \u2014 and I'm most energized when turning ambiguous problems into clear, elegant solutions.",
+    "When I'm not building products, you'll find me writing about product management, exploring new tools, or diving into open-source projects."
+  ],
+  "current_company": "IIM Ahmedabad",
+  "current_role": "MBA Candidate & Product Builder",
+  "previous_company": "",
+  "location": "Ahmedabad, India",
+  "email": "p22chanakya@iima.ac.in",
+  "resume_url": "",
+  "calendar_url": "",
+  "social": {
+    "github": "https://github.com/p22chanakya-iima",
+    "linkedin": "https://linkedin.com/in/chanakya-yadav",
+    "twitter": "",
+    "medium": ""
+  },
+  "currently": {
+    "working_on": "Building tools that help people make better decisions",
+    "learning": "Advanced analytics, system design, and growth strategies",
+    "reading": "Inspired, The Mom Test, Continuous Discovery Habits"
+  },
+  "fun_facts": [
+    "Built a size-matching tool used by 1000+ people",
+    "Believe the best PRDs fit on one page",
+    "Can debate product strategy for hours over chai"
+  ],
+  "skills": {
+    "product": ["User Research", "Product Strategy", "Roadmap Planning", "A/B Testing", "PRDs & Specs", "Data Analysis", "Growth Experiments"],
+    "tools": ["Figma", "Jira", "Mixpanel", "SQL", "Python", "Google Analytics"],
+    "methodologies": ["Agile/Scrum", "Design Thinking", "Jobs-to-be-Done", "Lean Startup", "OKRs"]
+  },
+  "education": [
+    {
+      "degree": "MBA",
+      "institution": "Indian Institute of Management Ahmedabad",
+      "year": "2022 \u2013 2024",
+      "notes": "Focus on Technology & Product Management"
+    }
+  ],
+  "open_to": ["Product roles", "Advisory opportunities", "Speaking at events", "Coffee chats about PM"]
+}

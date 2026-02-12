@@ -1,0 +1,66 @@
+{
+  "projects": [
+    {
+      "id": "brand-size-matcher",
+      "title": "Brand Size Matcher",
+      "tagline": "Find your perfect clothing size across 23+ brands",
+      "company": "Personal Project",
+      "role": "Product Manager & Developer",
+      "date": "2026-02",
+      "status": "Live",
+      "category": "Product",
+      "problem": "Clothing sizes vary wildly across brands, causing purchase anxiety and high return rates. A Medium in Zara fits completely differently from a Medium in H&M.",
+      "solution": "Built a free tool that uses IoU-based measurement matching to translate your known size in one brand to the equivalent size across 23 brands, including international and Indian D2C labels.",
+      "impact": [
+        "23 brands with 6 garment categories",
+        "Covers both international and Indian D2C brands",
+        "Open-source with community contributions"
+      ],
+      "tags": ["Web App", "Consumer", "Open Source"],
+      "github": "https://github.com/p22chanakya-iima/brand-size-matcher",
+      "live_url": "https://p22chanakya-iima.github.io/brand-size-matcher/",
+      "featured": true
+    },
+    {
+      "id": "project-two",
+      "title": "Your Next Project",
+      "tagline": "A brief, compelling one-liner",
+      "company": "Context or Company",
+      "role": "Your Role",
+      "date": "2025-01",
+      "status": "Completed",
+      "category": "Product",
+      "problem": "Describe the problem this project solved.",
+      "solution": "Describe your approach and what you built.",
+      "impact": [
+        "Key metric or result",
+        "Another achievement",
+        "Third point of impact"
+      ],
+      "tags": ["Strategy", "B2B"],
+      "github": "",
+      "live_url": "",
+      "featured": true
+    },
+    {
+      "id": "project-three",
+      "title": "Side Project Example",
+      "tagline": "Something you built on the side",
+      "company": "Personal Project",
+      "role": "Builder",
+      "date": "2024-06",
+      "status": "In Progress",
+      "category": "Side Project",
+      "problem": "What problem sparked this idea?",
+      "solution": "How are you solving it?",
+      "impact": [
+        "Early traction or learnings",
+        "What you discovered"
+      ],
+      "tags": ["Side Project", "Learning"],
+      "github": "",
+      "live_url": "",
+      "featured": false
+    }
+  ]
+}

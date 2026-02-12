@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post — Chanakya Yadav</title>
+  <meta name="description" content="">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">CY</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../index.html" class="nav__link">Home</a></li>
+        <li><a href="../about.html" class="nav__link">About</a></li>
+        <li><a href="../work.html" class="nav__link">Work</a></li>
+        <li><a href="../writing.html" class="nav__link">Writing</a></li>
+        <li><a href="../contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme-toggle" aria-label="Toggle theme">&#127769;</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container--narrow">
+    <article class="blog-post">
+
+      <!-- Back link -->
+      <a href="../writing.html" class="blog-post__back">&larr; All posts</a>
+
+      <!-- Header -->
+      <header class="blog-post__header">
+        <h1 class="blog-post__title" id="blog-post-title">Loading...</h1>
+        <div class="blog-post__meta">
+          <span id="blog-post-date"></span>
+          <span id="blog-post-readtime"></span>
+        </div>
+        <div class="blog-post__tags" id="blog-post-tags"></div>
+      </header>
+
+      <!-- Content — populated from markdown -->
+      <div class="blog-post__content" id="blog-post-content">
+        <div class="blog-loading">Loading post...</div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="blog-post__footer">
+        <div class="blog-post__share">
+          <a class="blog-post__share-btn" id="share-twitter" href="#" target="_blank" rel="noopener">Share on X</a>
+          <a class="blog-post__share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <button class="blog-post__share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!'})">Copy link</button>
+        </div>
+        <a href="../writing.html" class="blog-post__back">&larr; Back to all posts</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Chanakya Yadav. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script src="../js/markdown-parser.js"></script>
+  <script src="../js/blog-loader.js"></script>
+  <script>
+    // Initialize blog post page
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get('post');
+      if (postId) {
+        // Blog data is at ../data/ from blog/ directory
+        // Override fetch path for BlogLoader
+        const originalLoadPosts = BlogLoader.loadPosts.bind(BlogLoader);
+        BlogLoader.loadPosts = async function() {
+          if (this.postsData) return this.postsData;
+          const res = await fetch('../data/blog-posts.json');
+          this.postsData = await res.json();
+          return this.postsData;
+        };
+        await BlogLoader.renderPost(postId);
+
+        // Set up share links
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.getElementById('blog-post-title').textContent);
+        document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+        document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      } else {
+        document.getElementById('blog-post-title').textContent = 'Post not found';
+        document.getElementById('blog-post-content').innerHTML = '<p>No post specified. <a href="../writing.html">View all posts</a>.</p>';
+      }
+
+      // Theme toggle
+      const toggle = document.querySelector('.nav__theme-toggle');
+      if (toggle) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          const root = document.documentElement;
+          root.style.setProperty('--color-primary', '#F0F0F0');
+          root.style.setProperty('--color-secondary', '#A0A0A0');
+          root.style.setProperty('--color-accent', '#4D9FFF');
+          root.style.setProperty('--color-accent-hover', '#6BB3FF');
+          root.style.setProperty('--color-bg', '#111111');
+          root.style.setProperty('--color-bg-alt', '#1A1A1A');
+          root.style.setProperty('--color-muted', '#222222');
+          root.style.setProperty('--color-border', '#333333');
+          toggle.textContent = '\u2600\uFE0F';
+        }
+        toggle.addEventListener('click', () => {
+          const isDark = localStorage.getItem('theme') === 'dark';
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          location.reload();
+        });
+      }
+
+      // Mobile menu
+      const menuToggle = document.querySelector('.nav__mobile-toggle');
+      const links = document.querySelector('.nav__links');
+      if (menuToggle && links) {
+        menuToggle.addEventListener('click', () => links.classList.toggle('nav__links--open'));
+      }
+    });
+  </script>
+</body>
+</html>
