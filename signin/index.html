@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid #334155;
+        }
+
+        h1 {
+            color: #f1f5f9;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        label {
+            display: block;
+            color: #cbd5e1;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: #0f172a;
+            color: #f1f5f9;
+            font-size: 15px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        input:focus {
+            border-color: #6366f1;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #6366f1;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        button:hover { background: #4f46e5; }
+        button:disabled { background: #475569; cursor: not-allowed; }
+
+        .error {
+            display: none;
+            background: #7f1d1d;
+            color: #fca5a5;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .error.show { display: block; }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.5s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            color: #64748b;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .back:hover { color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Admin</h1>
+        <p class="subtitle">Sign in to edit portfolio content</p>
+
+        <div class="error" id="error"></div>
+
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="Enter password">
+
+            <button type="submit" id="submitBtn">Sign In</button>
+        </form>
+
+        <a href="../index.html" class="back">Back to portfolio</a>
+    </div>
+
+    <script>
+        // ---- CONFIG: Update this after deploying backend ----
+        const API_BASE = 'https://portfolio-admin-api-murex.vercel.app';
+        // -----------------------------------------------------
+
+        const form = document.getElementById('loginForm');
+        const btn = document.getElementById('submitBtn');
+        const errorEl = document.getElementById('error');
+
+        // If already logged in, go straight to editor
+        (async () => {
+            const token = localStorage.getItem('adminToken');
+            if (!token) return;
+            try {
+                const res = await fetch(`${API_BASE}/api/verify`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                });
+                const data = await res.json();
+                if (data.valid) window.location.href = 'editor.html';
+            } catch { /* ignore, show login */ }
+        })();
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorEl.classList.remove('show');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Signing in...';
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            try {
+                const res = await fetch(`${API_BASE}/api/auth`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(data.error || 'Login failed');
+                }
+
+                localStorage.setItem('adminToken', data.token);
+                localStorage.setItem('adminUser', JSON.stringify({
+                    email: data.email,
+                    expiresAt: Date.now() + (data.expiresIn * 1000),
+                }));
+
+                window.location.href = 'editor.html';
+            } catch (err) {
+                errorEl.textContent = err.message;
+                errorEl.classList.add('show');
+                btn.disabled = false;
+                btn.textContent = 'Sign In';
+            }
+        });
+    </script>
+</body>
+</html>
