@@ -1,7 +1,7 @@
 {
   "name": "Chanakya Yadav",
   "title": "Problem Solver & Builder",
-  "tagline": "Make something people want.",
+  "tagline": "Making something people want.",
   "bio": [
     "I'm a problem solver at heart. By day I'm an Associate Director at S&P Global. By night (and weekends), I vibe code side projects, take help from smarter people, and try to make things that are actually useful to someone.",
     "My philosophy is simple — find a real problem, build the simplest thing that solves it, and ship it. I don't overthink frameworks or processes. I just want to make something people want.",
@@ -39,5 +39,10 @@
       "notes": ""
     }
   ],
-  "open_to": ["Interesting problems to solve", "Side project collaborations", "Trivia nights", "Coffee chats"]
+  "open_to": [
+    "Interesting problems to solve",
+    "Side project collaborations",
+    "Trivia nights",
+    "Coffee chats"
+  ]
 }
