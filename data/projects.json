@@ -16,7 +16,11 @@
         "International + Indian D2C brands",
         "Open source — anyone can contribute"
       ],
-      "tags": ["Web App", "Side Project", "Open Source"],
+      "tags": [
+        "Web App",
+        "Side Project",
+        "Open Source"
+      ],
       "github": "https://github.com/p22chanakya-iima/brand-size-matcher",
       "live_url": "https://p22chanakya-iima.github.io/brand-size-matcher/",
       "featured": true
@@ -37,7 +41,11 @@
         "3D ball with drag-to-shake physics",
         "Zero dependencies — pure HTML/CSS/JS"
       ],
-      "tags": ["Fun", "Side Project", "Creative"],
+      "tags": [
+        "Fun",
+        "Side Project",
+        "Creative"
+      ],
       "github": "https://github.com/p22chanakya-iima/valentine-magic-8ball",
       "live_url": "https://p22chanakya-iima.github.io/valentine-magic-8ball/",
       "featured": true
@@ -58,7 +66,11 @@
         "Monaco editor for blog posts",
         "Zero cost — all free tiers"
       ],
-      "tags": ["Web App", "Side Project", "Meta"],
+      "tags": [
+        "Web App",
+        "Side Project",
+        "Meta"
+      ],
       "github": "https://github.com/p22chanakya-iima/portfolio",
       "live_url": "https://p22chanakya-iima.github.io/portfolio/",
       "featured": true
