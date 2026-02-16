@@ -23,6 +23,18 @@
       "description": "",
       "achievements": [],
       "logo": "IA"
+    },
+    {
+      "id": "iit-madras",
+      "company": "IIT Madras",
+      "role": "B-Tech",
+      "type": "Work",
+      "date_start": "2014",
+      "date_end": "2019",
+      "current": false,
+      "description": "",
+      "achievements": [],
+      "logo": ""
     }
   ]
 }
