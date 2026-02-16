@@ -1,3 +1,17 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "first-post",
+      "title": "Second order effects of code becoming cheap",
+      "date": "2026-02-16",
+      "tags": [
+        "code",
+        "ai",
+        "LLM"
+      ],
+      "excerpt": "We have arrived at new era. An era where code is cheap.",
+      "content_file": "blog/posts/first-post.md",
+      "featured": true
+    }
+  ]
 }
