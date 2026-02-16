@@ -1,47 +1,43 @@
 {
   "name": "Chanakya Yadav",
-  "title": "Product Manager & Builder",
-  "tagline": "I build products that solve real problems.",
+  "title": "Problem Solver & Builder",
+  "tagline": "Make something people want.",
   "bio": [
-    "I'm a Product Manager who believes great products come from deeply understanding people and their problems. I combine analytical thinking with creative problem-solving to build things that matter.",
-    "Currently pursuing my MBA at IIM Ahmedabad, I bring a builder's mindset to everything I do. I love the intersection of technology, design, and business strategy \u2014 and I'm most energized when turning ambiguous problems into clear, elegant solutions.",
-    "When I'm not building products, you'll find me writing about product management, exploring new tools, or diving into open-source projects."
+    "I'm a problem solver at heart. By day I'm an Associate Director at S&P Global. By night (and weekends), I vibe code side projects, take help from smarter people, and try to make things that are actually useful to someone.",
+    "My philosophy is simple — find a real problem, build the simplest thing that solves it, and ship it. I don't overthink frameworks or processes. I just want to make something people want.",
+    "Outside of work, I'm a trivia nerd and history buff. I love learning about anything and everything — building jenga blocks for my mental model of the world. Ask me about obscure historical events and I'll probably have a take."
   ],
-  "current_company": "IIM Ahmedabad",
-  "current_role": "MBA Candidate & Product Builder",
+  "current_company": "S&P Global",
+  "current_role": "Associate Director",
   "previous_company": "",
-  "location": "Ahmedabad, India",
+  "location": "India",
   "email": "p22chanakya@iima.ac.in",
   "resume_url": "",
   "calendar_url": "",
   "social": {
     "github": "https://github.com/p22chanakya-iima",
-    "linkedin": "https://linkedin.com/in/chanakya-yadav",
+    "linkedin": "https://linkedin.com/in/chanakyapvs",
     "twitter": "",
     "medium": ""
   },
   "currently": {
-    "working_on": "Building tools that help people make better decisions",
-    "learning": "Advanced analytics, system design, and growth strategies",
-    "reading": "Inspired, The Mom Test, Continuous Discovery Habits"
+    "working_on": "Vibe coding side projects and writing about second-order effects",
+    "learning": "How coding becoming cheap changes everything",
+    "reading": "History, trivia rabbit holes, and anything that adds a new jenga block"
   },
   "fun_facts": [
-    "Built a size-matching tool used by 1000+ people",
-    "Believe the best PRDs fit on one page",
-    "Can debate product strategy for hours over chai"
+    "Trivia nerd — will destroy you at pub quizzes",
+    "History buff with obscure takes on everything",
+    "Vibe codes side projects for fun, not for LinkedIn clout",
+    "Believes in the YC motto: Make something people want"
   ],
-  "skills": {
-    "product": ["User Research", "Product Strategy", "Roadmap Planning", "A/B Testing", "PRDs & Specs", "Data Analysis", "Growth Experiments"],
-    "tools": ["Figma", "Jira", "Mixpanel", "SQL", "Python", "Google Analytics"],
-    "methodologies": ["Agile/Scrum", "Design Thinking", "Jobs-to-be-Done", "Lean Startup", "OKRs"]
-  },
   "education": [
     {
       "degree": "MBA",
       "institution": "Indian Institute of Management Ahmedabad",
-      "year": "2022 \u2013 2024",
-      "notes": "Focus on Technology & Product Management"
+      "year": "2022 – 2024",
+      "notes": ""
     }
   ],
-  "open_to": ["Product roles", "Advisory opportunities", "Speaking at events", "Coffee chats about PM"]
+  "open_to": ["Interesting problems to solve", "Side project collaborations", "Trivia nights", "Coffee chats"]
 }
