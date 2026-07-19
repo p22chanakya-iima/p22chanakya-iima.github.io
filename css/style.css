@@ -4,13 +4,14 @@
    ============================================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* --- Design Tokens --- */
 :root {
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -190,6 +191,113 @@ a:hover { color: var(--color-accent-hover); }
 }
 .nav__theme-toggle:hover { color: var(--color-primary); }
 
+/* --- DM button (nav) --- */
+.nav__dm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: 0.5em 1.1em;
+  border-radius: 100px;
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.nav__dm-btn:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.nav__dm-btn svg { width: 14px; height: 14px; }
+
+/* --- Human / Agent view toggle --- */
+.nav__modes {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: var(--space-sm);
+  margin-left: 2px;
+  border-left: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+.nav__mode {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: inherit;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+.nav__mode::before { content: "[ ]"; }
+.nav__mode:hover { color: var(--color-primary); }
+.nav__mode.is-active { color: var(--color-accent); }
+.nav__mode.is-active::before { content: "[x]"; }
+
+@media (max-width: 900px) {
+  .nav__modes { display: none; }
+}
+
+/* --- Agent (machine) view overlay --- */
+.agent-view {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: #0c0c0d;
+  overflow: auto;
+  display: none;
+}
+body.agent-on .agent-view { display: block; }
+body.agent-on { overflow: hidden; }
+
+.agent-view__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 40px) var(--space-md) 100px;
+}
+
+.agent-view__copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 var(--space-md);
+  padding: 15px 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e8e8ea;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.agent-view__copy:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); color: #fff; }
+.agent-view__copy.is-copied { color: #4ade80; border-color: #4ade80; }
+
+.agent-view__pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: #e4e4e6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 /* Mobile nav toggle */
 .nav__mobile-toggle {
   display: none;
@@ -217,6 +325,8 @@ a:hover { color: var(--color-accent-hover); }
   }
   .nav__links--open { display: flex; }
   .nav__link { padding: var(--space-xs) 0; }
+  .nav__modes { display: inline-flex; border-left: 0; padding-left: 0; margin-left: 0; }
+  .nav__dm-btn { align-self: flex-start; }
 }
 
 /* --- Hero Section --- */
@@ -255,6 +365,31 @@ a:hover { color: var(--color-accent-hover); }
   flex-wrap: wrap;
 }
 
+/* --- Hero metrics strip --- */
+.hero__metrics {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+.hero__metric-value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.hero__metric-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  margin-top: 0.4em;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -291,9 +426,19 @@ a:hover { color: var(--color-accent-hover); }
 /* --- Section --- */
 .section {
   padding: var(--space-xl) 0;
+  scroll-margin-top: var(--nav-height);
 }
 .section--alt {
   background: var(--color-bg-alt);
+}
+
+/* Editorial divider between sections, inspired by asterisk section breaks */
+.section__divider {
+  text-align: center;
+  color: var(--color-border);
+  font-size: var(--text-lg);
+  letter-spacing: 0.5em;
+  padding: var(--space-md) 0 0;
 }
 
 .section__header {
