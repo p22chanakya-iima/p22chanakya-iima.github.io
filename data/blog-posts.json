@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "ai-ready-for-inference",
+      "title": "AI Is Ready for Its Next Phase: Inference",
+      "date": "2026-07-15",
+      "tags": [
+        "ai",
+        "inference",
+        "strategy"
+      ],
+      "excerpt": "Raw model capability is becoming abundant, and the premium on owning the single best model is starting to decline. The next moat is the inference control plane around the model.",
+      "content_file": "blog/posts/ai-ready-for-inference.md",
+      "featured": true
+    },
+    {
+      "id": "advice-to-ceos-dont-rely-on-one-model",
+      "title": "Advice to CEOs: Don't Rely on One Model",
+      "date": "2026-06-15",
+      "tags": [
+        "ai",
+        "enterprise",
+        "strategy"
+      ],
+      "excerpt": "The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task.",
+      "content_file": "blog/posts/advice-to-ceos-dont-rely-on-one-model.md",
+      "featured": true
+    },
+    {
+      "id": "ui-is-not-dead",
+      "title": "UI Is Not Dead",
+      "date": "2026-05-15",
+      "tags": [
+        "ai",
+        "product",
+        "design"
+      ],
+      "excerpt": "Chat and voice are becoming powerful interfaces for expressing intent, but people still need to see outcomes, compare alternatives, and remain in control. UI isn't dying — its role is changing.",
+      "content_file": "blog/posts/ui-is-not-dead.md",
+      "featured": true
+    },
+    {
       "id": "first-post",
       "title": "Second order effects of code becoming cheap",
       "date": "2026-02-16",

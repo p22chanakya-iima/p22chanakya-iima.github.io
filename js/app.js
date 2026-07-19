@@ -236,7 +236,7 @@ const App = {
     });
     lines.push('');
 
-    lines.push('## Case Studies');
+    lines.push('## Vibe Coded Fun Apps');
     lines.push('');
     projects.projects.forEach(p => {
       lines.push(`### ${p.title}`);
@@ -358,7 +358,6 @@ const App = {
     if (currentlyEl && profile.currently) {
       const items = [
         { label: 'Working on', value: profile.currently.working_on },
-        { label: 'Learning', value: profile.currently.learning },
         { label: 'Reading', value: profile.currently.reading }
       ];
       currentlyEl.innerHTML = items.map(item => `

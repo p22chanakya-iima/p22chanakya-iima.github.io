@@ -656,12 +656,10 @@ function editCurrently() {
     const cur = data.profile.currently || {};
     openModal('Edit Currently', `
         ${adminField('Working on', 'cur-working', cur.working_on || '')}
-        ${adminField('Learning', 'cur-learning', cur.learning || '')}
         ${adminField('Reading', 'cur-reading', cur.reading || '')}
     `, () => {
         if (!data.profile.currently) data.profile.currently = {};
         data.profile.currently.working_on = gv('cur-working');
-        data.profile.currently.learning = gv('cur-learning');
         data.profile.currently.reading = gv('cur-reading');
         markDirty('profile');
         closeModal();
