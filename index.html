@@ -59,24 +59,10 @@
   <section class="hero container--narrow">
     <h1 class="hero__name" id="hero-name">Chanakya Yadav</h1>
     <p class="hero__title" id="hero-title">Problem Solver & Builder</p>
-    <p class="hero__bio" id="hero-bio">Make something people want. Currently at S&P Global.</p>
+    <p class="hero__bio" id="hero-bio">Make something people want.</p>
     <div class="hero__cta">
       <a href="#case-studies" class="btn btn--primary">View Case Studies</a>
       <a href="https://linkedin.com/in/chanakyapvs" data-social="linkedin" target="_blank" rel="noopener" class="btn">DM me</a>
-    </div>
-    <div class="hero__metrics">
-      <div>
-        <div class="hero__metric-value">Associate Director</div>
-        <div class="hero__metric-label">S&amp;P Global</div>
-      </div>
-      <div>
-        <div class="hero__metric-value">MBA, IIM Ahmedabad</div>
-        <div class="hero__metric-label">Class of 2024</div>
-      </div>
-      <div>
-        <div class="hero__metric-value">3+ Side Projects</div>
-        <div class="hero__metric-label">Shipped Solo</div>
-      </div>
     </div>
   </section>
 
@@ -195,10 +181,6 @@
 
   <!-- Agent (machine-readable) view -->
   <div class="agent-view" id="agent-view" aria-hidden="true">
-    <button type="button" class="agent-view__close" id="agent-view-close" aria-label="Close agent view">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      Close
-    </button>
     <div class="agent-view__inner">
       <button type="button" class="agent-view__copy" id="agent-view-copy" aria-label="Copy the whole page as markdown">
         <svg width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -206,6 +188,10 @@
           <path d="M10.5 5.5V3.5C10.5 2.67 9.83 2 9 2H3.5C2.67 2 2 2.67 2 3.5V9C2 9.83 2.67 10.5 3.5 10.5H5.5" stroke="currentColor" stroke-width="1.2"/>
         </svg>
         <span class="agent-view__copy-label">Copy to clipboard</span>
+      </button>
+      <button type="button" class="agent-view__human-btn" id="agent-view-human" aria-label="Switch back to human view">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M2.5 14c0-2.76 2.46-5 5.5-5s5.5 2.24 5.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>Open Human view</span>
       </button>
       <pre class="agent-view__pre" id="agent-view-pre">Loading&hellip;</pre>
     </div>

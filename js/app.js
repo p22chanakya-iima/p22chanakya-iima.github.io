@@ -108,6 +108,7 @@ const App = {
       root.style.setProperty('--color-bg-alt', '#1A1A1A');
       root.style.setProperty('--color-muted', '#222222');
       root.style.setProperty('--color-border', '#333333');
+      root.style.setProperty('--color-nav-bg', 'rgba(17,17,17,0.92)');
     } else {
       root.style.removeProperty('--color-primary');
       root.style.removeProperty('--color-secondary');
@@ -117,6 +118,7 @@ const App = {
       root.style.removeProperty('--color-bg-alt');
       root.style.removeProperty('--color-muted');
       root.style.removeProperty('--color-border');
+      root.style.removeProperty('--color-nav-bg');
     }
   },
 
@@ -167,8 +169,8 @@ const App = {
       btn.addEventListener('click', () => setMode(btn.dataset.mode === 'agent'));
     });
 
-    const closeBtn = document.getElementById('agent-view-close');
-    if (closeBtn) closeBtn.addEventListener('click', () => setMode(false));
+    const humanBtn = document.getElementById('agent-view-human');
+    if (humanBtn) humanBtn.addEventListener('click', () => setMode(false));
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && document.body.classList.contains('agent-on')) setMode(false);
@@ -237,7 +239,7 @@ const App = {
     lines.push('## Case Studies');
     lines.push('');
     projects.projects.forEach(p => {
-      lines.push(`### ${p.title} — ${p.status}`);
+      lines.push(`### ${p.title}`);
       lines.push(p.tagline);
       lines.push(`Problem: ${p.problem}`);
       lines.push(`Solution: ${p.solution}`);
@@ -273,7 +275,7 @@ const App = {
     // Hero
     this.setText('hero-name', profile.name);
     this.setText('hero-title', profile.title);
-    this.setText('hero-bio', `${profile.tagline} Currently at ${profile.current_company}.`);
+    this.setText('hero-bio', profile.tagline);
 
     // Featured projects
     const featured = projects.projects.filter(p => p.featured).slice(0, 3);
@@ -413,10 +415,9 @@ const App = {
   },
 
   renderProjectCard(project, showDetail = false) {
-    const statusClass = project.status === 'Live' ? '' : 'project-card__status--in-progress';
     return `
       <article class="project-card fade-in">
-        <div class="project-card__status ${statusClass}">${project.status}</div>
+        ${project.image ? `<img class="project-card__image" src="${project.image}" alt="${project.title} landing page" loading="lazy">` : ''}
         <h3 class="project-card__title">${project.title}</h3>
         <p class="project-card__tagline">${project.tagline}</p>
         <div class="project-card__meta">${project.role} · ${project.company}</div>

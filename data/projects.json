@@ -7,8 +7,8 @@
       "company": "Side Project",
       "role": "Built it for fun",
       "date": "2026-02",
-      "status": "Live",
       "category": "Side Project",
+      "image": "images/projects/brand-size-matcher.jpg",
       "problem": "Clothing sizes are a mess. A Medium in Zara fits nothing like a Medium in H&M. Every online purchase is a gamble, and returns are a pain.",
       "solution": "Built a tool that uses IoU-based measurement matching to translate your known size in one brand to equivalent sizes across 18 brands — international and Indian D2C labels included.",
       "impact": [
@@ -32,8 +32,8 @@
       "company": "Side Project",
       "role": "Built it for fun",
       "date": "2026-02",
-      "status": "Live",
       "category": "Side Project",
+      "image": "images/projects/valentine-magic-8ball.jpg",
       "problem": "Needed a fun, creative way to ask someone to be my Valentine. Regular cards are boring.",
       "solution": "Built an interactive 3D Magic 8 Ball that you shake to reveal Telugu memes. It cycles through 8 hand-picked memes, has sparkle cursor trails, floating hearts, and confetti animations. The answer is always yes.",
       "impact": [
@@ -51,28 +51,28 @@
       "featured": true
     },
     {
-      "id": "portfolio-admin",
-      "title": "This Portfolio + Admin CMS",
-      "tagline": "A static portfolio with a hidden admin editor that commits to GitHub.",
+      "id": "padagemi",
+      "title": "Padagemi (పదగేమి)",
+      "tagline": "A 2-minute Telugu crossword — guess 4 words from 12 clues.",
       "company": "Side Project",
-      "role": "Vibe coded it",
-      "date": "2026-02",
-      "status": "Live",
+      "role": "Built it for fun",
+      "date": "2026-06",
       "category": "Side Project",
-      "problem": "Wanted a portfolio site I could edit from my phone without touching code or a CMS dashboard.",
-      "solution": "Built a static site on GitHub Pages with a hidden /signin admin panel. Login, edit content in a form-based editor, hit save — it commits directly to the GitHub repo and the site updates in 2 minutes.",
+      "image": "images/projects/padagemi.jpg",
+      "problem": "Wanted a quick, casual word game for Telugu speakers — something in the language itself, not just another English crossword.",
+      "solution": "Built a mini Telugu crossword game in React: small 4-word grids, 12 clues, answers accepted in English, Tinglish, or Telugu script so there's no mental friction switching keyboards. Puzzle data is served from a Supabase Edge Function.",
       "impact": [
-        "Serverless backend on Vercel",
-        "Monaco editor for blog posts",
-        "Zero cost — all free tiers"
+        "Answers accepted in 3 input styles: English, Tinglish, Telugu",
+        "Deployed on Vercel, backend on Supabase",
+        "Currently down — the Supabase function is unreachable, so the live demo shows an error state"
       ],
       "tags": [
         "Web App",
         "Side Project",
-        "Meta"
+        "Games"
       ],
-      "github": "https://github.com/p22chanakya-iima/portfolio",
-      "live_url": "https://p22chanakya-iima.github.io/portfolio/",
+      "github": "",
+      "live_url": "https://padagemi-deploy.vercel.app",
       "featured": true
     }
   ]

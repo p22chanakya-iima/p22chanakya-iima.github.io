@@ -58,6 +58,7 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
   --transition: 0.2s ease;
+  --color-nav-bg: rgba(255,255,255,0.92);
 }
 
 /* --- Dark Mode --- */
@@ -71,6 +72,7 @@
     --color-bg-alt: #1A1A1A;
     --color-muted: #222222;
     --color-border: #333333;
+    --color-nav-bg: rgba(17,17,17,0.92);
   }
 }
 
@@ -120,14 +122,9 @@ a:hover { color: var(--color-accent-hover); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-bg);
+  background: var(--color-nav-bg);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.92);
-}
-
-@media (prefers-color-scheme: dark) {
-  .nav { background: rgba(17,17,17,0.92); }
 }
 
 .nav__inner {
@@ -271,37 +268,13 @@ body.agent-on { overflow: hidden; }
   padding: calc(var(--nav-height) + 40px) var(--space-md) 100px;
 }
 
-.agent-view__close {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 310;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.6em 1em;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #e8e8ea;
-  background: #0c0c0d;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all 0.18s;
-}
-.agent-view__close:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); color: #fff; }
-.agent-view__close svg { width: 12px; height: 12px; }
-
-.agent-view__copy {
+.agent-view__copy,
+.agent-view__human-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
-  margin: 0 0 var(--space-md);
   padding: 15px 22px;
   font-family: var(--font-mono);
   font-size: 12px;
@@ -315,8 +288,12 @@ body.agent-on { overflow: hidden; }
   cursor: pointer;
   transition: all 0.18s;
 }
-.agent-view__copy:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); color: #fff; }
+.agent-view__copy { margin: 0 0 var(--space-sm); }
+.agent-view__human-btn { margin: 0 0 var(--space-md); }
+.agent-view__copy:hover,
+.agent-view__human-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); color: #fff; }
 .agent-view__copy.is-copied { color: #4ade80; border-color: #4ade80; }
+.agent-view__human-btn svg { width: 14px; height: 14px; }
 
 .agent-view__pre {
   margin: 0;
@@ -392,31 +369,6 @@ body.agent-on { overflow: hidden; }
   gap: var(--space-sm);
   justify-content: center;
   flex-wrap: wrap;
-}
-
-/* --- Hero metrics strip --- */
-.hero__metrics {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-xl);
-  flex-wrap: wrap;
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--color-border);
-}
-.hero__metric-value {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1;
-}
-.hero__metric-label {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-secondary);
-  margin-top: 0.4em;
 }
 
 /* --- Buttons --- */
@@ -510,6 +462,7 @@ body.agent-on { overflow: hidden; }
   background: var(--color-bg);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .project-card:hover {
   box-shadow: var(--shadow-md);
@@ -517,15 +470,16 @@ body.agent-on { overflow: hidden; }
   transform: translateY(-2px);
 }
 
-.project-card__status {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-success);
-  margin-bottom: var(--space-xs);
+.project-card__image {
+  display: block;
+  width: calc(100% + 2 * var(--space-md));
+  margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom: 1px solid var(--color-border);
 }
-.project-card__status--in-progress { color: var(--color-accent); }
 
 .project-card__title {
   font-family: var(--font-display);
