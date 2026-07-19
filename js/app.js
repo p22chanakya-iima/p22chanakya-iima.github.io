@@ -153,17 +153,25 @@ const App = {
     if (!modes || !panel) return;
 
     const btns = modes.querySelectorAll('.nav__mode');
+    const setMode = async (isAgent) => {
+      document.body.classList.toggle('agent-on', isAgent);
+      panel.setAttribute('aria-hidden', isAgent ? 'false' : 'true');
+      btns.forEach(b => b.classList.toggle('is-active', b.dataset.mode === (isAgent ? 'agent' : 'human')));
+      if (isAgent) {
+        panel.scrollTop = 0;
+        await this.renderAgentMarkdown();
+      }
+    };
+
     btns.forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const isAgent = btn.dataset.mode === 'agent';
-        document.body.classList.toggle('agent-on', isAgent);
-        panel.setAttribute('aria-hidden', isAgent ? 'false' : 'true');
-        btns.forEach(b => b.classList.toggle('is-active', b === btn));
-        if (isAgent) {
-          panel.scrollTop = 0;
-          await this.renderAgentMarkdown();
-        }
-      });
+      btn.addEventListener('click', () => setMode(btn.dataset.mode === 'agent'));
+    });
+
+    const closeBtn = document.getElementById('agent-view-close');
+    if (closeBtn) closeBtn.addEventListener('click', () => setMode(false));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('agent-on')) setMode(false);
     });
 
     const copyBtn = document.getElementById('agent-view-copy');
