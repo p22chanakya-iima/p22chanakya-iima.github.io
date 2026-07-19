@@ -64,7 +64,7 @@
       "impact": [
         "Answers accepted in 3 input styles: English, Tinglish, Telugu",
         "Deployed on Vercel, backend on Supabase",
-        "Currently down — the Supabase function is unreachable, so the live demo shows an error state"
+        "30+ puzzles, 12 clues each"
       ],
       "tags": [
         "Web App",
