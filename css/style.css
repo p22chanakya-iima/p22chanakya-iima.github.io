@@ -140,6 +140,12 @@ a:hover { color: var(--color-accent-hover); }
   height: var(--nav-height);
 }
 
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .nav__logo {
   font-family: var(--font-display);
   font-size: var(--text-lg);
@@ -212,13 +218,12 @@ a:hover { color: var(--color-accent-hover); }
 }
 .nav__dm-btn svg { width: 14px; height: 14px; }
 
-/* --- Human / Agent view toggle --- */
+/* --- Human / Agent view toggle (lives beside the logo) --- */
 .nav__modes {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding-left: var(--space-sm);
-  margin-left: 2px;
+  padding-left: 14px;
   border-left: 1px solid var(--color-border);
   font-family: var(--font-mono);
   font-size: 11px;
@@ -243,8 +248,9 @@ a:hover { color: var(--color-accent-hover); }
 .nav__mode.is-active { color: var(--color-accent); }
 .nav__mode.is-active::before { content: "[x]"; }
 
-@media (max-width: 900px) {
-  .nav__modes { display: none; }
+@media (max-width: 480px) {
+  .nav__modes { gap: 6px; padding-left: 8px; }
+  .nav__mode { font-size: 10px; }
 }
 
 /* --- Agent (machine) view overlay --- */
@@ -349,7 +355,6 @@ body.agent-on { overflow: hidden; }
   }
   .nav__links--open { display: flex; }
   .nav__link { padding: var(--space-xs) 0; }
-  .nav__modes { display: inline-flex; border-left: 0; padding-left: 0; margin-left: 0; }
   .nav__dm-btn { align-self: flex-start; }
 }
 
