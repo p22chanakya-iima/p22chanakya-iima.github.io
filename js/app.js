@@ -265,8 +265,11 @@ const App = {
 
     lines.push('## Writing');
     lines.push('');
+    const siteUrl = 'https://p22chanakya-iima.github.io/portfolio';
     posts.forEach(post => {
-      lines.push(`- **${post.title}** (${post.date}) — ${post.excerpt}`);
+      lines.push(`- **${post.title}** (${post.date})`);
+      lines.push(`  ${post.excerpt}`);
+      lines.push(`  Link: ${siteUrl}/blog/post-template.html?post=${post.id}`);
     });
     lines.push('');
 

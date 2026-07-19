@@ -49,7 +49,7 @@
         "LLM",
         "Second Order"
       ],
-      "excerpt": "We have arrived at new era. An era where code is cheap.",
+      "excerpt": "Code is becoming free, but the tacit and institutional knowledge that came with writing it isn't — and AI just broke the only mechanism (juniors becoming seniors) that transmitted it, with real second-order effects on open source, code monoculture, and documentation.",
       "content_file": "blog/posts/first-post.md",
       "featured": true
     }
