@@ -2,7 +2,7 @@
 
 Code is now cheap. AI can generate it in seconds. But we're about to discover that code was never the valuable part—it was the three layers of knowledge that came with learning to write it. And we just eliminated the only mechanism for transmitting those layers.
 
-#The Three Layers:
+### The Three Layers
 Layer 1: Explicit Knowledge (What college teaches)
 
 - Algorithms, data structures, syntax
@@ -29,7 +29,7 @@ Layer 3: Institutional Knowledge (What companies teach)
 
 This knowledge lives in people's heads and in company's documentations which are a needle in haystack. It's the "why" behind every "what." It's war stories, lessons learned the hard way. It's never fully documented. 
 
-#The Mechanism That's Breaking
+### The Mechanism That's Breaking
 Junior developers were the connective tissue. They:
 
 - Absorbed Layer 2 by making thousands of small mistakes over years
@@ -41,7 +41,7 @@ Now AI makes juniors economically unviable. Why pay $80K for a junior when a sen
 The math makes sense. 
 *Until you realize: Where do seniors come from?*
 
-#A Moat Disappears
+### A Moat Disappears
 Every software firm had three competitive advantages:
 - Talent (engineers who execute) — AI just commoditized this
 - Money (capital to build) — Abundant, no longer differentiating
@@ -64,7 +64,7 @@ I ask again: *Where do seniors come from?*
 
 Culture transmits through juniors. They're blank slates who absorb and propagate standards. Without them, culture stays in seniors' heads. When seniors leave, it dies.
 
-#Second Order Effect - 1 (Open Source Modules die slow death)
+### Second Order Effect 1: Open Source Modules Die a Slow Death
 OSS maintenance dies. There was unwritten agreement between engineers of the world to share their specialist work with each other inform of open source modules to create positive externalities. If code is easy to build, engineers will lose incentive to open source their code for greater good. This multi-player game theory will lead to nash equilibrium none sharing or few sharing. 
 
 |                | Other Engineers Share | Other Engineers Hoard |
@@ -84,10 +84,10 @@ Post AI:
 
 **Nash Equilibrium:** (Hoard, Hoard) = (5, 5)
 
-#Second Order Effect - 2 (Mono-Culture Code)
+### Second Order Effect 2: Mono-Culture Code
 Everyone uses the same AI trained on the same code patterns. Systems start looking identical. Same architectures. Same vulnerabilities. A security flaw in AI-suggested authentication pattern compromises thousands of companies simultaneously. Diversity of implementation was unintentional security. Homogeneity creates systemic risk.
 
-#Second Order Effect - 3 (Death of Quality Documentation)
+### Second Order Effect 3: Death of Quality Documentation
 Here's a perverse incentive nobody's talking about: Documentation made code cheap by feeding LLMs. Now engineers will protect themselves by NOT documenting.
 
 The logic is simple: Detailed documentation becomes the prompt that automates you. If you write down exactly how you architect systems, what trade-offs you consider, why you make decisions—you've just created the training data that replaces you.

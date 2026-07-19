@@ -99,6 +99,24 @@ const MarkdownParser = {
         continue;
       }
 
+      // Tables (GFM-style: header row, separator row, body rows)
+      const isTableRow = l => /^\|.*\|\s*$/.test(l);
+      const isTableSeparator = l => /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(l);
+      if (isTableRow(line) && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+        const parseRow = l => l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+        const headerCells = parseRow(line);
+        i += 2;
+        const bodyRows = [];
+        while (i < lines.length && isTableRow(lines[i])) {
+          bodyRows.push(parseRow(lines[i]));
+          i++;
+        }
+        const thead = `<thead><tr>${headerCells.map(c => `<th>${this.inline(c)}</th>`).join('')}</tr></thead>`;
+        const tbody = `<tbody>${bodyRows.map(r => `<tr>${r.map(c => `<td>${this.inline(c)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+        blocks.push(`<div class="table-wrap"><table>${thead}${tbody}</table></div>`);
+        continue;
+      }
+
       // Empty line
       if (line.trim() === '') {
         i++;
@@ -107,12 +125,18 @@ const MarkdownParser = {
 
       // Paragraph — collect consecutive non-empty lines
       let para = [];
-      while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !lines[i].startsWith('>') && !/^[-*+]\s/.test(lines[i]) && !/^\d+\.\s/.test(lines[i]) && !/^(-{3,}|_{3,}|\*{3,})$/.test(lines[i].trim()) && !lines[i].startsWith('<pre>')) {
+      while (i < lines.length && lines[i].trim() !== '' && !/^#{1,6}\s/.test(lines[i]) && !lines[i].startsWith('>') && !/^[-*+]\s/.test(lines[i]) && !/^\d+\.\s/.test(lines[i]) && !/^(-{3,}|_{3,}|\*{3,})$/.test(lines[i].trim()) && !lines[i].startsWith('<pre>')) {
         para.push(lines[i]);
         i++;
       }
       if (para.length) {
         blocks.push(`<p>${this.inline(para.join(' '))}</p>`);
+      } else {
+        // Safety net: a line matched none of the block types above (e.g. a
+        // '#' with no following space). Emit it as a paragraph so the
+        // parser always makes forward progress instead of looping forever.
+        blocks.push(`<p>${this.inline(lines[i])}</p>`);
+        i++;
       }
     }
 
