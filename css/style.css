@@ -622,6 +622,44 @@ body.agent-on { overflow: hidden; }
   margin-right: var(--space-sm);
 }
 
+/* --- Work Stories ("How I Think") --- */
+.stories-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.story-card {
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+.story-card:last-child { border-bottom: none; padding-bottom: 0; }
+
+.story-card__context {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 0.5em;
+}
+
+.story-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  line-height: var(--leading-tight);
+}
+
+.story-card__text {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-primary);
+  margin-bottom: 1em;
+}
+.story-card__text:last-child { margin-bottom: 0; }
+
 /* --- Timeline (Experience) --- */
 .timeline {
   position: relative;
