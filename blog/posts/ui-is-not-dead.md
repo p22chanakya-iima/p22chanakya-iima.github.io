@@ -1,6 +1,6 @@
 ## UI Is Not Dead
 
-Chat and voice will become powerful interfaces for expressing intent. Users will increasingly tell software what they want instead of navigating through menus and forms. But intent is only one part of interaction. People still need to see outcomes, compare alternatives, explore possibilities, correct mistakes, and decide what to do next. Language is excellent for asking. Graphical interfaces are often better for understanding.
+Chat and voice will become the primary way people express intent to software. Users will increasingly tell software what they want instead of navigating through menus and forms. But intent is only one part of interaction. People still need to see outcomes, compare alternatives, explore possibilities, correct mistakes, and decide what to do next. Language is excellent for asking. Graphical interfaces are better for understanding.
 
 The shift will resemble what happened with direct-to-consumer brands. Online distribution made purchasing more convenient. But many digital-first companies eventually opened physical stores because customers still wanted to touch products, compare them, experience the brand, and gain confidence before buying. Stores did not disappear. Their role changed. Similarly, AI will reduce the number of interfaces users must operate manually. It will increase the importance of interfaces used for exploration, inspection, and control.
 
