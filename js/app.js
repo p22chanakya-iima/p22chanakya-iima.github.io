@@ -310,20 +310,6 @@ const App = {
       }
     }
 
-    // Work stories ("How I Think")
-    const storiesEl = document.getElementById('work-stories');
-    if (storiesEl) {
-      const workStories = await this.loadJSON('work-stories.json');
-      this.setText('work-stories-intro', workStories.intro);
-      storiesEl.innerHTML = workStories.stories.map(s => `
-        <article class="story-card fade-in">
-          <div class="story-card__context">${s.context}</div>
-          <h3 class="story-card__title">${s.title}</h3>
-          ${s.body.map(p => `<p class="story-card__text">${p}</p>`).join('')}
-        </article>
-      `).join('');
-    }
-
     this.observeNew();
   },
 
