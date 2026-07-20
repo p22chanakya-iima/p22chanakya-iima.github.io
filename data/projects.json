@@ -1,6 +1,31 @@
 {
   "projects": [
     {
+      "id": "finflash",
+      "title": "FinFlash",
+      "tagline": "Live SEC filings and corporate events, extracted into Excel-ready data in minutes.",
+      "company": "Side Project",
+      "role": "Built it for fun",
+      "date": "2025-08",
+      "category": "Side Project",
+      "image": "images/projects/finflash.jpg",
+      "problem": "Investment analysts need SEC filing data fast. Reading a 10-K or 8-K by hand and rebuilding the numbers in Excel takes too long when a market-moving filing just dropped.",
+      "solution": "Built a live market intelligence dashboard that tracks 10-K, 10-Q, and 8-K filings from major companies as they're filed. Each filing can be viewed instantly or extracted into structured, Excel-ready financials with one click. The backend runs on Supabase edge functions that fetch and parse filings, with a Postgres cache layer and a dedicated storage bucket for the source documents.",
+      "impact": [
+        "Tracks live 10-K, 10-Q, and 8-K filings from companies like Netflix, Oracle, Salesforce, Nvidia, and Apple",
+        "One-click extraction into structured, Excel-ready data",
+        "Supabase-backed caching layer with service-role-only write access"
+      ],
+      "tags": [
+        "Web App",
+        "Side Project",
+        "FinTech"
+      ],
+      "github": "",
+      "live_url": "https://filing-insight.lovable.app/",
+      "featured": true
+    },
+    {
       "id": "brand-size-matcher",
       "title": "Brand Size Matcher",
       "tagline": "Know your size in one brand? Find your match across 18 others.",
