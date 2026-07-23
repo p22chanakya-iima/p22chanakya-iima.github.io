@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chanakya Yadav — Agent View</title>
+  <meta name="description" content="Machine-readable summary of Chanakya Yadav's work, projects, and experience, written for AI agents.">
+  <meta property="og:title" content="Chanakya Yadav — Agent View">
+  <meta property="og:description" content="Machine-readable summary of Chanakya Yadav's work, projects, and experience, written for AI agents.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Render the agent view as a normal static page instead of a fixed overlay */
+    body.agent-standalone { background: #0c0c0d; overflow: visible; }
+    body.agent-standalone .agent-view {
+      position: static;
+      display: block;
+      z-index: auto;
+      inset: auto;
+    }
+    body.agent-standalone .agent-view__inner {
+      padding: 48px var(--space-md) 100px;
+    }
+  </style>
+</head>
+<body class="agent-standalone">
+
+  <div class="agent-view" id="agent-view" aria-hidden="false">
+    <div class="agent-view__inner">
+      <button type="button" class="agent-view__copy" id="agent-view-copy" aria-label="Copy the whole page as markdown">
+        <svg width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M10.5 5.5V3.5C10.5 2.67 9.83 2 9 2H3.5C2.67 2 2 2.67 2 3.5V9C2 9.83 2.67 10.5 3.5 10.5H5.5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <span class="agent-view__copy-label">Copy to clipboard</span>
+      </button>
+      <a href="../index.html" class="agent-view__human-btn" id="agent-view-human" aria-label="Switch to human view">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M2.5 14c0-2.76 2.46-5 5.5-5s5.5 2.24 5.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>Open Human view</span>
+      </a>
+      <pre class="agent-view__pre" id="agent-view-pre">Loading&hellip;</pre>
+    </div>
+  </div>
+
+  <script src="../js/agent-page.js"></script>
+</body>
+</html>

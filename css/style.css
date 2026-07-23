@@ -238,6 +238,7 @@ a:hover { color: var(--color-accent-hover); }
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  text-decoration: none;
   transition: color 0.15s;
 }
 .nav__mode::before { content: "[ ]"; }
