@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "login-with-chatgpt-claude-gemini",
+      "title": "The Case for \"Login with ChatGPT/Claude/Gemini\"",
+      "date": "2026-07-23",
+      "tags": [
+        "ai",
+        "strategy",
+        "product"
+      ],
+      "excerpt": "AI consumer apps are priced like enterprise software because every interaction carries a metered inference bill. Millions of people already pay for Claude, ChatGPT, and Gemini and barely use their quota. Here's the economic case for letting builders tap that capacity, why OpenClaw already tried it and got shut down, and what would have to change for providers to open this door on purpose.",
+      "content_file": "blog/posts/login-with-chatgpt-claude-gemini.md",
+      "featured": true
+    },
+    {
       "id": "ai-ready-for-inference",
       "title": "AI Is Ready for Its Next Phase: Inference",
       "date": "2026-07-15",
