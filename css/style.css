@@ -500,6 +500,26 @@ body.agent-on { overflow: hidden; }
   margin-bottom: var(--space-sm);
 }
 
+.project-card__insight {
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-secondary);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.project-card__persona {
+  font-size: var(--text-xs);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.project-card__persona strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;

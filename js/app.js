@@ -439,6 +439,8 @@ const App = {
         <h3 class="project-card__title">${project.title}</h3>
         <p class="project-card__tagline">${project.tagline}</p>
         <div class="project-card__meta">${project.role} · ${project.company}</div>
+        ${!showDetail && project.insight ? `<p class="project-card__insight">${project.insight}</p>` : ''}
+        ${!showDetail && project.persona ? `<p class="project-card__persona"><strong>Who it's for:</strong> ${project.persona}</p>` : ''}
         <div class="project-card__tags">
           ${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
