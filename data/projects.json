@@ -28,33 +28,6 @@
       "featured": true
     },
     {
-      "id": "brand-size-matcher",
-      "title": "Brand Size Matcher",
-      "tagline": "Know your size in one brand? Find your match across 18 others.",
-      "company": "Side Project",
-      "role": "Built it for fun",
-      "date": "2026-02",
-      "category": "Side Project",
-      "image": "images/projects/brand-size-matcher.jpg",
-      "problem": "Clothing sizes are a mess. A Medium in Zara fits nothing like a Medium in H&M. Every online purchase is a gamble, and returns are a pain.",
-      "insight": "A pattern I kept noticing over years with friends and family: someone finds their true fit in exactly one brand, then can never find that same fit anywhere else. The same idea extends past clothing to shoes — some feet are wide, some are narrow, and most brands quietly optimize for one. Nike's lasts generally suit narrower feet; brands like Gully Labs fit wider feet better — but nothing tells you that upfront.",
-      "persona": "Anyone who's found 'their size' in exactly one brand and dreads every new brand as a guessing game — extended from clothing to footwear, where foot width, not just length, quietly decides fit.",
-      "solution": "Built a tool that uses IoU-based measurement matching to translate your known size in one brand to equivalent sizes across 18 brands — international and Indian D2C labels included.",
-      "impact": [
-        "18 brands covered across 6 garment categories",
-        "International + Indian D2C brands",
-        "Open source — anyone can contribute"
-      ],
-      "tags": [
-        "Web App",
-        "Side Project",
-        "Open Source"
-      ],
-      "github": "https://github.com/p22chanakya-iima/brand-size-matcher",
-      "live_url": "https://p22chanakya-iima.github.io/brand-size-matcher/",
-      "featured": true
-    },
-    {
       "id": "padagemi",
       "title": "Padagemi (పదగేమి)",
       "tagline": "A 2-minute Telugu crossword — guess 4 words from 12 clues.",
@@ -79,6 +52,33 @@
       ],
       "github": "",
       "live_url": "https://padagemi-deploy.vercel.app",
+      "featured": true
+    },
+    {
+      "id": "brand-size-matcher",
+      "title": "Brand Size Matcher",
+      "tagline": "Know your size in one brand? Find your match across 18 others.",
+      "company": "Side Project",
+      "role": "Built it for fun",
+      "date": "2026-02",
+      "category": "Side Project",
+      "image": "images/projects/brand-size-matcher.jpg",
+      "problem": "Clothing sizes are a mess. A Medium in Zara fits nothing like a Medium in H&M. Every online purchase is a gamble, and returns are a pain.",
+      "insight": "A pattern I kept noticing over years with friends and family: someone finds their true fit in exactly one brand, then can never find that same fit anywhere else. The same idea extends past clothing to shoes — some feet are wide, some are narrow, and most brands quietly optimize for one. Nike's lasts generally suit narrower feet; brands like Gully Labs fit wider feet better — but nothing tells you that upfront.",
+      "persona": "Anyone who's found 'their size' in exactly one brand and dreads every new brand as a guessing game — extended from clothing to footwear, where foot width, not just length, quietly decides fit.",
+      "solution": "Built a tool that uses IoU-based measurement matching to translate your known size in one brand to equivalent sizes across 18 brands — international and Indian D2C labels included.",
+      "impact": [
+        "18 brands covered across 6 garment categories",
+        "International + Indian D2C brands",
+        "Open source — anyone can contribute"
+      ],
+      "tags": [
+        "Web App",
+        "Side Project",
+        "Open Source"
+      ],
+      "github": "https://github.com/p22chanakya-iima/brand-size-matcher",
+      "live_url": "https://p22chanakya-iima.github.io/brand-size-matcher/",
       "featured": true
     }
   ]
