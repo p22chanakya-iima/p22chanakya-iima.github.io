@@ -256,6 +256,8 @@ const App = {
       lines.push(`### ${p.title}`);
       lines.push(p.tagline);
       lines.push(`Problem: ${p.problem}`);
+      if (p.insight) lines.push(`Insight: ${p.insight}`);
+      if (p.persona) lines.push(`Persona: ${p.persona}`);
       lines.push(`Solution: ${p.solution}`);
       (p.impact || []).forEach(i => lines.push(`- ${i}`));
       if (p.live_url) lines.push(`Live: ${p.live_url}`);
@@ -446,6 +448,16 @@ const App = {
               <div class="project-detail__label">Problem</div>
               <p class="project-detail__text">${project.problem}</p>
             </div>
+            ${project.insight ? `
+            <div class="project-detail__section">
+              <div class="project-detail__label">Insight</div>
+              <p class="project-detail__text">${project.insight}</p>
+            </div>` : ''}
+            ${project.persona ? `
+            <div class="project-detail__section">
+              <div class="project-detail__label">Persona</div>
+              <p class="project-detail__text">${project.persona}</p>
+            </div>` : ''}
             <div class="project-detail__section">
               <div class="project-detail__label">Solution</div>
               <p class="project-detail__text">${project.solution}</p>

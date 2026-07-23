@@ -10,6 +10,8 @@
       "category": "Side Project",
       "image": "images/projects/finflash.jpg",
       "problem": "Investment analysts need SEC filing data fast. Reading a 10-K or 8-K by hand and rebuilding the numbers in Excel takes too long when a market-moving filing just dropped.",
+      "insight": "Junior equity researchers lose hours to grunt work — listening to investor calls and manually copying numbers out of press releases and filings into a spreadsheet — instead of doing actual analysis.",
+      "persona": "Junior equity researchers and analysts who need structured, Excel-ready filing data instead of re-transcribing it by hand.",
       "solution": "Built a live market intelligence dashboard that tracks 10-K, 10-Q, and 8-K filings from major companies as they're filed. Each filing can be viewed instantly or extracted into structured, Excel-ready financials with one click. The backend runs on Supabase edge functions that fetch and parse filings, with a Postgres cache layer and a dedicated storage bucket for the source documents.",
       "impact": [
         "Tracks live 10-K, 10-Q, and 8-K filings from companies like Netflix, Oracle, Salesforce, Nvidia, and Apple",
@@ -35,6 +37,8 @@
       "category": "Side Project",
       "image": "images/projects/brand-size-matcher.jpg",
       "problem": "Clothing sizes are a mess. A Medium in Zara fits nothing like a Medium in H&M. Every online purchase is a gamble, and returns are a pain.",
+      "insight": "A pattern I kept noticing over years with friends and family: someone finds their true fit in exactly one brand, then can never find that same fit anywhere else. The same idea extends past clothing to shoes — some feet are wide, some are narrow, and most brands quietly optimize for one. Nike's lasts generally suit narrower feet; brands like Gully Labs fit wider feet better — but nothing tells you that upfront.",
+      "persona": "Anyone who's found 'their size' in exactly one brand and dreads every new brand as a guessing game — extended from clothing to footwear, where foot width, not just length, quietly decides fit.",
       "solution": "Built a tool that uses IoU-based measurement matching to translate your known size in one brand to equivalent sizes across 18 brands — international and Indian D2C labels included.",
       "impact": [
         "18 brands covered across 6 garment categories",
@@ -60,6 +64,8 @@
       "category": "Side Project",
       "image": "images/projects/padagemi.jpg",
       "problem": "Wanted a quick, casual word game for Telugu speakers — something in the language itself, not just another English crossword.",
+      "insight": "Very few consumer products in India are actually built for the ~200 million homemakers who make up a huge, largely underserved audience — most consumer tech treats them as an afterthought rather than a primary user.",
+      "persona": "Homemakers across India, especially Telugu speakers, looking for a quick, casual moment of fun in their own language rather than another English-first app.",
       "solution": "Built a mini Telugu crossword game in React: small 4-word grids, 12 clues, answers accepted in English, Tinglish, or Telugu script so there's no mental friction switching keyboards. Puzzle data is served from a Supabase Edge Function.",
       "impact": [
         "Answers accepted in 3 input styles: English, Tinglish, Telugu",
