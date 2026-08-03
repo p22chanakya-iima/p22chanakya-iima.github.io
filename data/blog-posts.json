@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "code-is-getting-cheaper-refactoring-is-getting-more-expensive",
+      "title": "Code Is Getting Cheaper. Refactoring Is Getting More Expensive.",
+      "date": "2026-08-03",
+      "tags": [
+        "ai",
+        "code",
+        "strategy"
+      ],
+      "excerpt": "cheap generation → larger, less-understood codebase → expensive archaeology → shallower refactors → accumulating illegibility → loss of future maneuverability.",
+      "content_file": "blog/posts/code-is-getting-cheaper-refactoring-is-getting-more-expensive.md",
+      "featured": true
+    },
+    {
       "id": "login-with-chatgpt-claude-gemini",
       "title": "The Case for \"Login with ChatGPT/Claude/Gemini\"",
       "date": "2026-07-23",
