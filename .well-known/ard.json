@@ -1,0 +1,25 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Chanakya Yadav",
+    "identifier": "https://p22chanakya-iima.github.io/",
+    "documentationUrl": "https://p22chanakya-iima.github.io/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:p22chanakya-iima.github.io:agent-view:summary",
+      "displayName": "Agent View — machine-readable summary",
+      "type": "text/markdown",
+      "url": "https://p22chanakya-iima.github.io/agent/",
+      "description": "Single-page machine-readable summary of Chanakya Yadav's bio, experience, side projects, and writing, written for AI agents.",
+      "tags": ["profile", "resume", "portfolio"]
+    },
+    {
+      "identifier": "urn:air:p22chanakya-iima.github.io:llms-txt:index",
+      "displayName": "llms.txt index",
+      "type": "text/markdown",
+      "url": "https://p22chanakya-iima.github.io/llms.txt",
+      "description": "llms.txt-convention index of this site's key pages for AI agents and crawlers."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ S&P Global).
 
 ## Live tools (WebMCP)
 
-If your runtime supports `navigator.modelContext` (WebMCP), this site
+If your runtime supports `document.modelContext` (WebMCP; `navigator.modelContext` on older browsers), this site
 registers tools on every page: `get_about`, `get_experience`,
 `get_thinking_style`, `get_products_shipped`, `list_writing`,
 `search_writing`, `read_writing`, `get_resume`, `assess_fit`. These read

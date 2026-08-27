@@ -1,5 +1,6 @@
 /* ============================================================
-   WebMCP tools (navigator.modelContext)
+   WebMCP tools (document.modelContext, with navigator.modelContext
+   fallback for older browsers)
    Loaded on every page (root-relative fetch paths, so it works at
    any URL depth) so in-browser agents can discover these tools no
    matter which page they land on, not just /agent/.
@@ -55,7 +56,11 @@ function scoreEvidence(evidenceText, jdTermFreq, idf) {
 }
 
 async function registerWebMCPTools() {
-  if (!navigator.modelContext || !navigator.modelContext.registerTool) return;
+  // document.modelContext is the current WebMCP entry point; navigator.modelContext
+  // is the older alias, deprecated starting Chrome 150. Support both so this keeps
+  // working across browser versions.
+  const modelContext = document.modelContext || navigator.modelContext;
+  if (!modelContext || !modelContext.registerTool) return;
 
   async function loadJSON(file) {
     const res = await fetch(`/data/${file}`);
@@ -80,7 +85,7 @@ async function registerWebMCPTools() {
     return text;
   }
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'get_about',
     description: "Chanakya Yadav's bio, current role, education, skills, and working philosophy — for understanding who he is before diving into specific experience.",
     inputSchema: { type: 'object', properties: {} },
@@ -118,7 +123,7 @@ async function registerWebMCPTools() {
     });
   }
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'get_thinking_style',
     description: "Four first-person, in-depth case studies of real projects Chanakya has led at S&P Global — what he actually noticed, why he made the call he made, what happened, and the lesson he took from it. This is the reasoning behind the metrics in get_experience: read this when the question is 'how does he think', not 'what did he achieve'. Optionally filter by a topic keyword (e.g. 'deterministic', 'agent', 'support').",
     inputSchema: {
@@ -136,7 +141,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'get_experience',
     description: 'Structured work history with quantified achievements (the "what"), optionally filtered by company name (e.g. "S&P Global" or "Zensar"). For the reasoning and narrative behind these numbers (the "why" and "how"), call get_thinking_style instead.',
     inputSchema: {
@@ -160,7 +165,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'get_products_shipped',
     description: 'Side projects Chanakya has designed and shipped end-to-end (not just prototyped) — each with the problem, the insight behind it, and measurable impact.',
     inputSchema: { type: 'object', properties: {} },
@@ -179,7 +184,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'list_writing',
     description: "Titles, dates, tags, and excerpts of all of Chanakya's published essays. Use this to see what's available before reading or searching.",
     inputSchema: { type: 'object', properties: {} },
@@ -188,7 +193,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'search_writing',
     description: 'Keyword search across the full text of all essays (title, tags, excerpt, and body). This is plain keyword matching, not semantic search. Returns matching posts ranked by match count.',
     inputSchema: {
@@ -214,7 +219,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'read_writing',
     description: 'Full text of one essay by id (get the id from list_writing or search_writing).',
     inputSchema: {
@@ -230,7 +235,7 @@ async function registerWebMCPTools() {
     }
   });
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'get_resume',
     description: 'Resume-style summary: headline, one-line positioning, full work history with metrics, education, and skills — equivalent to a PDF resume in structured form.',
     inputSchema: { type: 'object', properties: {} },
@@ -258,7 +263,7 @@ async function registerWebMCPTools() {
     'Regular exposure to senior leadership as a stakeholder, but not yet a sustained direct-reporting relationship with a CPO or CEO.'
   ];
 
-  navigator.modelContext.registerTool({
+  modelContext.registerTool({
     name: 'assess_fit',
     description: "Given a job description's text, returns the strongest matching evidence from Chanakya's experience, projects, and writing (via keyword overlap — this tool does not run a model, so it does not generate a verdict), plus a fixed list of gaps he'd openly acknowledge. Use this evidence plus your own judgment to assess fit.",
     inputSchema: {

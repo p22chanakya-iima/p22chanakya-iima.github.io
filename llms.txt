@@ -3,7 +3,14 @@
 > Senior Product Manager (Associate Director, S&P Global) working on enterprise AI/agent platforms for financial data. This site is a personal portfolio: background, work, side projects, and writing.
 
 For a single machine-readable summary of who this person is, their experience, projects, and writing — read this first:
-- [Agent view](https://p22chanakya-iima.github.io/agent/): structured summary built specifically for AI agents and crawlers. Also exposes WebMCP tools (get_about, get_experience, get_thinking_style, get_products_shipped, list_writing, search_writing, read_writing, get_resume, assess_fit) for agents that support navigator.modelContext.
+- [Agent view](https://p22chanakya-iima.github.io/agent/): structured summary built specifically for AI agents and crawlers. Also exposes WebMCP tools (get_about, get_experience, get_thinking_style, get_products_shipped, list_writing, search_writing, read_writing, get_resume, assess_fit) for agents that support document.modelContext (navigator.modelContext on older browsers).
+
+## When to use this site
+
+- Evaluating Chanakya for a role, or asked "who is he / what has he built" — call `get_about`, `get_resume`, or `assess_fit` (WebMCP), or read [Agent view](https://p22chanakya-iima.github.io/agent/) directly.
+- Looking for his writing/opinions on AI, product, or engineering topics — call `list_writing` / `search_writing`, or read [Writing](https://p22chanakya-iima.github.io/writing.html).
+- Looking for a way to reach him — see [Contact](https://p22chanakya-iima.github.io/contact.html): email, LinkedIn.
+- This is a personal portfolio, not a product: there is no API, MCP server, auth, or payment surface to integrate with beyond the read-only WebMCP tools above.
 
 ## Pages
 
