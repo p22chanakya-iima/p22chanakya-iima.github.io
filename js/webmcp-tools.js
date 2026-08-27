@@ -70,6 +70,17 @@ async function registerWebMCPTools() {
   const profile = await loadJSON('profile.json');
   const experience = await loadJSON('experience.json');
   const projects = await loadJSON('projects.json');
+
+  // Computed once from the earliest Work entry's date_start (excluding
+  // Education entries), not hardcoded, so this doesn't silently go stale
+  // by a year like it did before.
+  const earliestStartYear = Math.min(
+    ...experience.experience
+      .filter(r => r.type === 'Work')
+      .map(r => parseInt(r.date_start, 10))
+      .filter(Number.isFinite)
+  );
+  const yearsOfExperience = new Date().getFullYear() - earliestStartYear;
   let posts = [];
   try {
     const blogData = await loadJSON('blog-posts.json');
@@ -242,7 +253,7 @@ async function registerWebMCPTools() {
     async execute() {
       return {
         headline: 'Senior Product Manager | Financial Data & AI',
-        summary: 'Sr PM (5+ yrs) building 0-to-1 AI platforms and data infrastructure for multiple $100M+ ACV financial products, leading knowledge-work automation and straight-through-processing strategy.',
+        summary: `Sr PM (${yearsOfExperience}+ yrs) building 0-to-1 AI platforms and data infrastructure for multiple $100M+ ACV financial products, leading knowledge-work automation and straight-through-processing strategy.`,
         location: profile.location,
         contact: { email: profile.email, linkedin: profile.social.linkedin, github: profile.social.github },
         experience: experience.experience.map(r => ({
@@ -257,7 +268,7 @@ async function registerWebMCPTools() {
   });
 
   const KNOWN_GAPS = [
-    'Total professional experience is ~7 years (2019–present) — at the lower end of the range some Director-level JDs ask for (e.g. 7–8+ years).',
+    `Total professional experience is ~${yearsOfExperience} years (${earliestStartYear}–present) — at the lower end of the range some Director-level JDs ask for (e.g. 7–8+ years).`,
     'Largest team led directly so far is a 4–6 person engineering/product pod (plus an 11-person extracurricular team) — not yet a multi-team org built and hired from scratch as the sole leader.',
     'Career to date has been inside enterprise financial data and enterprise SaaS (S&P Global, Zensar) — no consumer-scale product experience.',
     'Regular exposure to senior leadership as a stakeholder, but not yet a sustained direct-reporting relationship with a CPO or CEO.'
