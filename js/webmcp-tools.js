@@ -71,16 +71,12 @@ async function registerWebMCPTools() {
   const experience = await loadJSON('experience.json');
   const projects = await loadJSON('projects.json');
 
-  // Computed once from the earliest Work entry's date_start (excluding
-  // Education entries), not hardcoded, so this doesn't silently go stale
-  // by a year like it did before.
-  const earliestStartYear = Math.min(
-    ...experience.experience
-      .filter(r => r.type === 'Work')
-      .map(r => parseInt(r.date_start, 10))
-      .filter(Number.isFinite)
-  );
-  const yearsOfExperience = new Date().getFullYear() - earliestStartYear;
+  // Years of experience is profile.years_of_experience, not derived from
+  // dates — it's a deliberate positioning call (matches the resume's own
+  // headline), not just "current year minus first job's start year".
+  // Read from profile.json so get_resume and assess_fit can't drift apart
+  // the way they did before.
+  const yearsOfExperience = profile.years_of_experience;
   let posts = [];
   try {
     const blogData = await loadJSON('blog-posts.json');
@@ -252,10 +248,10 @@ async function registerWebMCPTools() {
     inputSchema: { type: 'object', properties: {} },
     async execute() {
       return {
-        headline: 'Senior Product Manager | Financial Data & AI',
-        summary: `Sr PM (${yearsOfExperience}+ yrs) building 0-to-1 AI platforms and data infrastructure for multiple $100M+ ACV financial products, leading knowledge-work automation and straight-through-processing strategy.`,
+        headline: 'Product Leader | Financial Data & AI',
+        summary: `Product Leader (${yearsOfExperience} yrs) building 0-to-1 knowledge-work automations and data infrastructure for $100M+ ACV financial products, finding leverage in workflows via a hypothesis-driven, build-prove-scale approach to achieve straight-through-processing.`,
         location: profile.location,
-        contact: { email: profile.email, linkedin: profile.social.linkedin, github: profile.social.github },
+        contact: { email: profile.email, phone: profile.phone, linkedin: profile.social.linkedin, github: profile.social.github },
         experience: experience.experience.map(r => ({
           company: r.company, role: r.role, type: r.type,
           dates: r.date_start ? `${r.date_start} – ${r.current ? 'Present' : r.date_end}` : '',
@@ -268,7 +264,7 @@ async function registerWebMCPTools() {
   });
 
   const KNOWN_GAPS = [
-    `Total professional experience is ~${yearsOfExperience} years (${earliestStartYear}–present) — at the lower end of the range some Director-level JDs ask for (e.g. 7–8+ years).`,
+    `Total professional experience is ${yearsOfExperience} years — at the lower end of the range some Director-level JDs ask for (e.g. 7–8+ years).`,
     'Largest team led directly so far is a 4–6 person engineering/product pod (plus an 11-person extracurricular team) — not yet a multi-team org built and hired from scratch as the sole leader.',
     'Career to date has been inside enterprise financial data and enterprise SaaS (S&P Global, Zensar) — no consumer-scale product experience.',
     'Regular exposure to senior leadership as a stakeholder, but not yet a sustained direct-reporting relationship with a CPO or CEO.'

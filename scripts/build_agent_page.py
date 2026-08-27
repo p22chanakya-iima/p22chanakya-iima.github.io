@@ -105,14 +105,14 @@ def main():
     template_path = ROOT / "agent" / "index.html"
     content = template_path.read_text(encoding="utf-8")
 
-    new_content = re.sub(
+    new_content, count = re.subn(
         r'(<pre class="agent-view__pre" id="agent-view-pre">)(.*?)(</pre>)',
         lambda m: m.group(1) + escaped + m.group(3),
         content,
         flags=re.DOTALL,
     )
 
-    if new_content == content:
+    if count == 0:
         raise SystemExit("Could not find the agent-view-pre block to replace.")
 
     template_path.write_text(new_content, encoding="utf-8")

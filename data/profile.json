@@ -13,6 +13,8 @@
   "previous_company": "Zensar (ZenLabs)",
   "location": "Hyderabad, India",
   "email": "p22chanakya@iima.ac.in",
+  "phone": "+91 85004 09855",
+  "years_of_experience": "5+",
   "resume_url": "",
   "calendar_url": "",
   "social": {
@@ -73,7 +75,10 @@
       "Jira",
       "Windsurf",
       "Azure",
-      "Claude Code"
+      "Claude Code",
+      "Notion",
+      "Amplitude",
+      "PostHog"
     ]
   },
   "open_to": ["Interesting problems to solve", "Side project collaborations", "Trivia nights", "Coffee chats"]

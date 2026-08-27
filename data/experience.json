@@ -3,39 +3,39 @@
     {
       "id": "spglobal-agentops",
       "company": "S&P Global",
-      "role": "Platform Product Manager (Associate Director) — AgentOps Platform",
+      "role": "Associate Director, Platform Product Manager — AgentOps Platform",
       "type": "Work",
       "date_start": "2025",
       "date_end": "",
       "current": true,
-      "description": "Founded and lead the 0-to-1 build of S&P Global's internal AgentOps platform, an AI harness for building, evaluating, and scaling production agents across the business.",
+      "description": "Promoted to lead the 0-to-1 build of S&P Global's internal AgentOps platform, unifying the business's agent-building efforts into a collaborative UX for business and engineers.",
       "achievements": [
-        "Drove $2.4M+ annualized run-rate savings, automating expert work of 115 FTEs, achieving 75%+ straight-through-processing",
-        "Led the 0-to-1 platform strategy, mapping the universal JTBD of automation into a shared agent-building journey",
-        "Onboarded 4 businesses via self-serve activation: load docs via integrations, run eval, see STP/ROI in minutes, then optimize",
-        "Evaluated 3 LLMOps vendors; built in-house after none matched the required integration depth or client-FDE collaboration UX",
-        "Cut SDLC from months to weeks by encoding business context and rules into knowledge graphs, reducing feedback loops",
-        "Built a collaborative UX where business and engineers jointly build proven automations, not a systems-only workflow",
-        "Founded AgentOps at leadership's request; led a 4-engineer pod while collaborating with 20+ people across business, tech, and delivery"
+        "Drove $2.4M+ annualized run-rate savings, automating expert work of 115 FTEs across 3 workflows, achieving 75%+ straight-through-processing",
+        "Onboarded 4 businesses and 120+ users via self-serve activation: load docs and data via MCP, run eval, see STP/ROI in minutes, then optimize",
+        "Reduced agent error rates to human-level (2–3%), unlocking unsupervised straight-through-processing by devising eval loops on a financial QA tool",
+        "Cut SDLC from months to weeks by architecting a reusable skill.md that turns the org's training docs into an agent-executable ontology",
+        "Leading a 4-engineer pod and 20+ cross-functional contributors across business, tech, and delivery for 4 businesses",
+        "Built a collaborative UX where business and engineers jointly build proven automations, not a systems-only workflow; developing product builders in the process",
+        "Evaluated 3 LLMOps vendors; built in-house after none matched the required integration depth or client-FDE collaboration UX"
       ],
       "logo": "SP"
     },
     {
       "id": "spglobal-fdi",
       "company": "S&P Global",
-      "role": "Product Manager — Financial Data Intelligence (Associate Director)",
+      "role": "Associate Director, Product Manager — Financial Data Intelligence",
       "type": "Work",
       "date_start": "2024",
       "date_end": "2025",
       "current": false,
-      "description": "Owned AI Search, ingestion modernization, and shared data layer initiatives inside S&P Global's Financial Data Intelligence business.",
+      "description": "Served as internal consultant to a $500M+ ACV business's VP, driving strategic initiatives across a 2,000+ person team spanning tech and delivery.",
       "achievements": [
         "AI Search: lifted first-contact resolution from 72% to 87% with an in-workflow AI search tool surfacing relevant past queries",
-        "AI Search: identified that 60% of support demand was recurring knowledge-data queries, and reframed support as a discovery problem rather than a staffing problem",
+        "AI Search: found that 60% of support demand was recurring knowledge-data queries, and reframed support as a discovery problem",
         "Ingestion Modernisation: discovered a 70% demand shift toward machine-parseable SEC filings and revamped ingestion strategy instead of tuning legacy workflows",
-        "Ingestion Modernisation: achieved 50% straight-through-processing with deterministic AI; built the prototype as PM to prove feasibility, won stakeholder buy-in, and scaled it",
+        "Ingestion Modernisation: achieved 50% straight-through-processing with a deterministic algorithm; built the prototype as PM to prove feasibility and scaled it",
         "Shared Data Layer: drove 60% STP without new agents by discovering that shared business inputs yield deterministic, reusable outputs at scale",
-        "Shared Data Layer: built a shared trust layer, later extended by other teams, generalizing the insight into reusable platform infrastructure"
+        "Shared Data Layer: built a shared trust layer, now extended by 3 other businesses, generalizing the insight into reusable platform infrastructure"
       ],
       "logo": "SP"
     },
@@ -47,13 +47,12 @@
       "date_start": "2019",
       "date_end": "2022",
       "current": false,
-      "description": "Product owner on ZenLabs' emerging-tech team, shipping blockchain and data products for enterprise clients.",
+      "description": "Owned product delivery and solutioning end-to-end for ZenLabs' emerging-tech team; earned a special recognition award for FY22 strategic delivery.",
       "achievements": [
         "Prevented $5M in contract leakage with a shared subcontractor record system, later earning a USPTO patent for the idea",
         "Generated $1.4M within the first hour of an NFT launch for a luxury brand, leading development and deployment end-to-end",
         "Led a 6-person pod from concept to market, launching a global auction house's Ethereum provenance platform in 6 weeks",
-        "Won client C-suite buy-in for a real-time engagement dashboard linking wallets, patrons, and secondary sales in one view",
-        "Awarded a certificate of special recognition for outstanding contribution to strategic deliveries in FY22"
+        "Won client C-suite buy-in for a real-time engagement dashboard linking wallets, patrons, and secondary sales in one view"
       ],
       "logo": ""
     },
@@ -84,8 +83,8 @@
       "achievements": [
         "Diagnosed engagement gaps across a 40K+ alumni platform and designed engagement loops and a codified roadmap",
         "Designed go-to-market into West Asia for a drone marketplace, positioning it on compliance-to-flight support via travel creators",
-        "Led an 11-person team as ProdMan Publications Cell Head, educating 800+ IIMA students on product management",
-        "Co-raised ₹1.5L in sponsorship and secured 2 MoUs for IIMA's flagship sports event as SportsComm Cell Head"
+        "Led an 11-person team as ProdMan Publications Cell Head, educating 800+ IIMA students on product management (2023)",
+        "Co-raised ₹1.5L in sponsorship and secured 2 MoUs for IIMA's flagship sports event as SportsComm Cell Head (2023)"
       ],
       "logo": "IA"
     },
@@ -99,7 +98,7 @@
       "current": false,
       "description": "",
       "achievements": [
-        "Elected Branch Councilor and Department Legislator, representing 220 students across the MME department"
+        "Elected Branch Councilor and Department Legislator, representing 220 students across the MME department (2017)"
       ],
       "logo": ""
     }
