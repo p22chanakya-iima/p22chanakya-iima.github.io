@@ -643,7 +643,7 @@ body.agent-on { overflow: hidden; }
   margin-right: var(--space-sm);
 }
 
-/* --- Timeline (Experience) --- */
+/* --- Timeline (used by the /signin admin editor's preview pane) --- */
 .timeline {
   position: relative;
   padding-left: var(--space-md);
@@ -715,6 +715,25 @@ body.agent-on { overflow: hidden; }
   position: absolute;
   left: 0;
   color: var(--color-border);
+}
+
+/* --- Career Flow (public Experience section) --- */
+.career-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.career-flow__item {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.career-flow__arrow {
+  color: var(--color-secondary);
+  font-size: var(--text-lg);
 }
 
 /* --- Skills Grid --- */

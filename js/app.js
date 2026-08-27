@@ -318,7 +318,6 @@ const App = {
   // --- About Page ---
   async initAbout() {
     const profile = await this.loadJSON('profile.json');
-    const experience = await this.loadJSON('experience.json');
 
     // Bio
     const bioEl = document.getElementById('about-bio');
@@ -326,21 +325,12 @@ const App = {
       bioEl.innerHTML = profile.bio.map(p => `<p>${p}</p>`).join('');
     }
 
-    // Experience timeline
+    // Experience \u2014 simple flow, not a full resume timeline
     const timelineEl = document.getElementById('experience-timeline');
-    if (timelineEl) {
-      timelineEl.innerHTML = experience.experience.map(exp => `
-        <div class="timeline__item fade-in">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">${exp.date_start} \u2014 ${exp.current ? 'Present' : exp.date_end}</div>
-          <div class="timeline__role">${exp.role}</div>
-          <div class="timeline__company">${exp.company}</div>
-          <p class="timeline__description">${exp.description}</p>
-          <ul class="timeline__achievements">
-            ${exp.achievements.map(a => `<li>${a}</li>`).join('')}
-          </ul>
-        </div>
-      `).join('');
+    if (timelineEl && profile.career_flow) {
+      timelineEl.innerHTML = profile.career_flow
+        .map(step => `<span class="career-flow__item fade-in">${step}</span>`)
+        .join('<span class="career-flow__arrow">\u2192</span>');
     }
 
     // Skills
