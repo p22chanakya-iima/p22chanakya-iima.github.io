@@ -329,7 +329,14 @@ const App = {
     const timelineEl = document.getElementById('experience-timeline');
     if (timelineEl && profile.career_flow) {
       timelineEl.innerHTML = profile.career_flow
-        .map(step => `<span class="career-flow__item fade-in">${step}</span>`)
+        .map(step => `
+          <div class="career-flow__item fade-in">
+            <div class="career-flow__logo">${step.logo}</div>
+            <div class="career-flow__name">${step.name}</div>
+            <div class="career-flow__subtitle">${step.subtitle}</div>
+            <div class="career-flow__dates">${step.dates}</div>
+          </div>
+        `)
         .join('<span class="career-flow__arrow">\u2192</span>');
     }
 

@@ -31,7 +31,11 @@
     "Vibe codes side projects for fun, not for LinkedIn clout",
     "Believes in the YC motto: Make something people want"
   ],
-  "career_flow": ["S&P Global", "IIM Ahmedabad", "IIT Madras"],
+  "career_flow": [
+    { "name": "S&P Global", "logo": "SP", "dates": "2024 – Present", "subtitle": "Associate Director" },
+    { "name": "IIM Ahmedabad", "logo": "IA", "dates": "2022 – 2024", "subtitle": "PGP (MBA)" },
+    { "name": "IIT Madras", "logo": "IM", "dates": "2014 – 2019", "subtitle": "B.Tech" }
+  ],
   "education": [
     {
       "degree": "MBA (PGP)",
