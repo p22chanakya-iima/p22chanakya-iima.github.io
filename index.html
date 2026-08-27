@@ -132,10 +132,24 @@
         <p class="section__subtitle">Problem solver. Builder. Trivia nerd.</p>
       </div>
       <div class="about__bio fade-in" id="about-bio">
-        <!-- Populated by JS from profile.json -->
+        <!-- BUILD:about-bio -->
+<p>I'm a problem solver at heart. By day I'm an Associate Director at S&P Global. By night (and weekends), I vibe code side projects, read and write about anything. Writing is where I form my mind.</p>
+<p>I think the best work starts with curiosity, not conviction. Find something people actually want, notice the leveraged insight sitting inside it, and go solve it. I hold the how loosely. It's usually wrong the first few times, and that's fine, it's supposed to change as you learn. I'd rather be right eventually than certain immediately.</p>
+<p>None of that works alone, though. I want to love the journey as much as the destination, which mostly comes down to who's next to me. I look for people who are a delight to work with and just as curious as I am, and we figure the rest out together.</p>
+<p>Outside of work, I'm a trivia nerd, history buff, and NBA fan. Tim Duncan, Kevin Durant, and Anthony Edwards are my favorite players. I love how they approach the game and treat their teammates, on and off the court. I'll read about almost anything if it's interesting enough, and every new thing I pick up is another jenga block in how I see the world. Ask me about some obscure historical event and I'll probably have a take.</p>
+<!-- /BUILD:about-bio -->
       </div>
       <div class="currently-grid stagger mt-lg" id="currently-grid">
-        <!-- Populated by JS -->
+        <!-- BUILD:currently-grid -->
+<div class="currently-item">
+  <div class="currently-item__label">Working on</div>
+  <div class="currently-item__value">Vibe coding side projects and writing about second-order effects</div>
+</div>
+<div class="currently-item">
+  <div class="currently-item__label">Reading</div>
+  <div class="currently-item__value">The Scaling Era: An Oral History of AI, 2019–2025 — by Dwarkesh Patel and Gavin Leech</div>
+</div>
+<!-- /BUILD:currently-grid -->
       </div>
     </div>
   </section>
@@ -148,7 +162,21 @@
         <p class="section__subtitle">Where I've worked and studied.</p>
       </div>
       <div class="career-flow" id="experience-timeline">
-        <!-- Populated by JS from experience.json -->
+        <!-- BUILD:experience-timeline -->
+<div class="career-flow__item fade-in">
+  <div class="career-flow__name">S&P Global</div>
+  <div class="career-flow__subtitle">Associate Director</div>
+  <div class="career-flow__dates">2024 – Present</div>
+</div><span class="career-flow__arrow">→</span><div class="career-flow__item fade-in">
+  <div class="career-flow__name">IIM Ahmedabad</div>
+  <div class="career-flow__subtitle">PGP (MBA)</div>
+  <div class="career-flow__dates">2022 – 2024</div>
+</div><span class="career-flow__arrow">→</span><div class="career-flow__item fade-in">
+  <div class="career-flow__name">IIT Madras</div>
+  <div class="career-flow__subtitle">B.Tech</div>
+  <div class="career-flow__dates">2014 – 2019</div>
+</div>
+<!-- /BUILD:experience-timeline -->
       </div>
     </div>
   </section>
@@ -161,7 +189,38 @@
         <p class="section__subtitle">Thoughts on product, building, and learning.</p>
       </div>
       <div class="posts-list stagger" id="recent-posts">
-        <!-- Populated by JS -->
+        <!-- BUILD:recent-posts -->
+<article class="post-card fade-in">
+  <a href="blog/inevitable-memory-doom.html" class="post-card__link">
+    <div class="post-card__date">Aug 16, 2026</div>
+    <h3 class="post-card__title">Inevitable Memory Doom</h3>
+    <p class="post-card__excerpt">Email, photos, and enterprise software each ran the same cycle: make accumulation effortless, then monetize the overflow once it becomes unmanageable. Agentic coding is about to run it again — the real opportunity is a product that prevents the pile from forming, not one that sells more storage after it does.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">product</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html" class="post-card__link">
+    <div class="post-card__date">Aug 3, 2026</div>
+    <h3 class="post-card__title">Code Is Getting Cheaper. Refactoring Is Getting More Expensive.</h3>
+    <p class="post-card__excerpt">cheap generation → larger, less-understood codebase → expensive archaeology → shallower refactors → accumulating illegibility → loss of future maneuverability.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">code</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/login-with-chatgpt-claude-gemini.html" class="post-card__link">
+    <div class="post-card__date">Jul 23, 2026</div>
+    <h3 class="post-card__title">The Case for "Login with ChatGPT/Claude/Gemini"</h3>
+    <p class="post-card__excerpt">AI consumer apps are priced like enterprise software because every interaction carries a metered inference bill. Millions of people already pay for Claude, ChatGPT, and Gemini and barely use their quota. Here's the economic case for letting builders tap that capacity, why OpenClaw already tried it and got shut down, and what would have to change for providers to open this door on purpose.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">strategy</span><span class="tag">product</span></div>
+    </div>
+  </a>
+</article>
+<!-- /BUILD:recent-posts -->
       </div>
       <a href="writing.html" class="section__link">View all posts &#8594;</a>
     </div>
@@ -175,7 +234,38 @@
         <p class="section__subtitle">Side projects I've built and shipped.</p>
       </div>
       <div class="projects-grid stagger" id="featured-projects">
-        <!-- Populated by JS -->
+        <!-- BUILD:featured-projects -->
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/finflash.jpg" alt="FinFlash landing page" loading="lazy">
+  <h3 class="project-card__title">FinFlash</h3>
+  <p class="project-card__tagline">Live SEC filings and corporate events, extracted into Excel-ready data in minutes.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  <p class="project-card__insight">Junior equity researchers lose hours to grunt work — listening to investor calls and manually copying numbers out of press releases and filings into a spreadsheet — instead of doing actual analysis.</p>
+  <p class="project-card__persona"><strong>Who it's for:</strong> Junior equity researchers and analysts who need structured, Excel-ready filing data instead of re-transcribing it by hand.</p>
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">FinTech</span></div>
+  <div class="project-card__actions"><a href="https://filing-insight.lovable.app/" target="_blank" rel="noopener" class="btn btn--primary">View Live</a></div>
+</article>
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/padagemi.jpg" alt="Padagemi (పదగేమి) landing page" loading="lazy">
+  <h3 class="project-card__title">Padagemi (పదగేమి)</h3>
+  <p class="project-card__tagline">A 2-minute Telugu crossword — guess 4 words from 12 clues.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  <p class="project-card__insight">Very few consumer products in India are actually built for the ~200 million homemakers who make up a huge, largely underserved audience — most consumer tech treats them as an afterthought rather than a primary user.</p>
+  <p class="project-card__persona"><strong>Who it's for:</strong> Homemakers across India, especially Telugu speakers, looking for a quick, casual moment of fun in their own language rather than another English-first app.</p>
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">Games</span></div>
+  <div class="project-card__actions"><a href="https://padagemi-deploy.vercel.app" target="_blank" rel="noopener" class="btn btn--primary">View Live</a></div>
+</article>
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/brand-size-matcher.jpg" alt="Brand Size Matcher landing page" loading="lazy">
+  <h3 class="project-card__title">Brand Size Matcher</h3>
+  <p class="project-card__tagline">Know your size in one brand? Find your match across 18 others.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  <p class="project-card__insight">A pattern I kept noticing over years with friends and family: someone finds their true fit in exactly one brand, then can never find that same fit anywhere else. The same idea extends past clothing to shoes — some feet are wide, some are narrow, and most brands quietly optimize for one. Nike's lasts generally suit narrower feet; brands like Gully Labs fit wider feet better — but nothing tells you that upfront.</p>
+  <p class="project-card__persona"><strong>Who it's for:</strong> Anyone who's found 'their size' in exactly one brand and dreads every new brand as a guessing game — extended from clothing to footwear, where foot width, not just length, quietly decides fit.</p>
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">Open Source</span></div>
+  <div class="project-card__actions"><a href="https://p22chanakya-iima.github.io/brand-size-matcher/" target="_blank" rel="noopener" class="btn btn--primary">View Live</a><a href="https://github.com/p22chanakya-iima/brand-size-matcher" target="_blank" rel="noopener" class="btn">GitHub</a></div>
+</article>
+<!-- /BUILD:featured-projects -->
       </div>
       <a href="work.html" class="section__link">View all vibe coded fun apps &#8594;</a>
     </div>
