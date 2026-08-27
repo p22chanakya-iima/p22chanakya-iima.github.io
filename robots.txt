@@ -10,6 +10,9 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
@@ -19,7 +22,17 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
+
+# Training-data-only scrapers (no live agent/retrieval use case) — opted out.
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
 
 Sitemap: https://p22chanakya-iima.github.io/sitemap.xml

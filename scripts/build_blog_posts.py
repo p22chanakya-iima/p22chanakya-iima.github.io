@@ -34,6 +34,8 @@ TEMPLATE = """<!DOCTYPE html>
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{excerpt}">
   <meta property="og:url" content="{url}">
+  <meta property="og:image" content="https://p22chanakya-iima.github.io/images/og-image.png">
+  <link rel="canonical" href="{url}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/blog.css">
@@ -133,6 +135,7 @@ TEMPLATE = """<!DOCTYPE html>
       }}
     }});
   </script>
+  <script src="/js/webmcp-tools.js"></script>
 </body>
 </html>
 """
@@ -151,6 +154,7 @@ def build_jsonld(post, url, content_text):
         "datePublished": post["date"],
         "description": post["excerpt"],
         "url": url,
+        "image": "https://p22chanakya-iima.github.io/images/og-image.png",
         "author": {
             "@type": "Person",
             "name": "Chanakya Yadav",
