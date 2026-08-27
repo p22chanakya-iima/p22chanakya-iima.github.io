@@ -21,6 +21,7 @@ For a single machine-readable summary of who this person is, their experience, p
 
 ## Writing (individual essays, static HTML, no JS required to read)
 
+- [Inevitable Memory Doom](https://p22chanakya-iima.github.io/blog/inevitable-memory-doom.html)
 - [Code Is Getting Cheaper. Refactoring Is Getting More Expensive.](https://p22chanakya-iima.github.io/blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html)
 - [The Case for "Login with ChatGPT/Claude/Gemini"](https://p22chanakya-iima.github.io/blog/login-with-chatgpt-claude-gemini.html)
 - [AI Is Ready for Its Next Phase: Inference](https://p22chanakya-iima.github.io/blog/ai-ready-for-inference.html)

@@ -25,7 +25,6 @@ def load_json(name):
 
 def main():
     profile = load_json("profile.json")
-    experience = load_json("experience.json")["experience"]
     projects = load_json("projects.json")["projects"]
     try:
         posts = load_json("blog-posts.json").get("posts", [])
@@ -57,17 +56,6 @@ def main():
     lines.append("---")
     lines.append("")
     lines.append("# Quick Reference")
-    lines.append("")
-
-    lines.append("## Experience")
-    lines.append("")
-    for exp in experience:
-        dates = f'{exp["date_start"]} – {"Present" if exp.get("current") else exp.get("date_end", "")}' if exp.get("date_start") else ""
-        lines.append(f'- **{exp["role"]}**, {exp["company"]}{f" ({dates})" if dates else ""}')
-        if exp.get("description"):
-            lines.append(f'  {exp["description"]}')
-        for a in exp.get("achievements", []):
-            lines.append(f"  - {a}")
     lines.append("")
 
     lines.append("## Vibe Coded Fun Apps")

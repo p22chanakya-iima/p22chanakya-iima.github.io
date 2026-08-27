@@ -331,7 +331,6 @@ const App = {
       timelineEl.innerHTML = profile.career_flow
         .map(step => `
           <div class="career-flow__item fade-in">
-            <div class="career-flow__logo"><img src="${step.logo}" alt="${step.name} logo" loading="lazy"></div>
             <div class="career-flow__name">${step.name}</div>
             <div class="career-flow__subtitle">${step.subtitle}</div>
             <div class="career-flow__dates">${step.dates}</div>

@@ -25,7 +25,6 @@ def load_json(name):
 
 def build_markdown():
     profile = load_json("profile.json")
-    experience = load_json("experience.json")
     projects = load_json("projects.json")
     try:
         posts = load_json("blog-posts.json").get("posts", [])
@@ -56,20 +55,6 @@ def build_markdown():
     lines.append("---")
     lines.append("")
     lines.append("# Quick Reference")
-    lines.append("")
-
-    lines.append("## Experience")
-    lines.append("")
-    for exp in experience.get("experience", []):
-        dates = ""
-        if exp.get("date_start"):
-            end = "Present" if exp.get("current") else exp.get("date_end", "")
-            dates = f" ({exp['date_start']} – {end})"
-        lines.append(f"- **{exp['role']}**, {exp['company']}{dates}")
-        if exp.get("description"):
-            lines.append(f"  {exp['description']}")
-        for a in exp.get("achievements", []):
-            lines.append(f"  - {a}")
     lines.append("")
 
     lines.append("## Vibe Coded Fun Apps")

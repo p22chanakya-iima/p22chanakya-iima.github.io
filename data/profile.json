@@ -32,9 +32,9 @@
     "Believes in the YC motto: Make something people want"
   ],
   "career_flow": [
-    { "name": "S&P Global", "logo": "images/logos/spglobal.png", "dates": "2024 – Present", "subtitle": "Associate Director" },
-    { "name": "IIM Ahmedabad", "logo": "images/logos/iima.png", "dates": "2022 – 2024", "subtitle": "PGP (MBA)" },
-    { "name": "IIT Madras", "logo": "images/logos/iitm.png", "dates": "2014 – 2019", "subtitle": "B.Tech" }
+    { "name": "S&P Global", "dates": "2024 – Present", "subtitle": "Associate Director" },
+    { "name": "IIM Ahmedabad", "dates": "2022 – 2024", "subtitle": "PGP (MBA)" },
+    { "name": "IIT Madras", "dates": "2014 – 2019", "subtitle": "B.Tech" }
   ],
   "education": [
     {

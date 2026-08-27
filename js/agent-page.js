@@ -13,7 +13,6 @@
 
   async function buildAgentMarkdown() {
     const profile = await loadJSON('profile.json');
-    const experience = await loadJSON('experience.json');
     const projects = await loadJSON('projects.json');
     let posts = [];
     try {
@@ -41,16 +40,6 @@
     lines.push('---');
     lines.push('');
     lines.push('# Quick Reference');
-    lines.push('');
-
-    lines.push('## Experience');
-    lines.push('');
-    experience.experience.forEach(exp => {
-      const dates = exp.date_start ? `${exp.date_start} – ${exp.current ? 'Present' : exp.date_end}` : '';
-      lines.push(`- **${exp.role}**, ${exp.company}${dates ? ` (${dates})` : ''}`);
-      if (exp.description) lines.push(`  ${exp.description}`);
-      (exp.achievements || []).forEach(a => lines.push(`  - ${a}`));
-    });
     lines.push('');
 
     lines.push('## Vibe Coded Fun Apps');
