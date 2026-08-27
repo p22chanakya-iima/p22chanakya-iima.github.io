@@ -36,6 +36,7 @@ TEMPLATE = """<!DOCTYPE html>
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="https://p22chanakya-iima.github.io/images/og-image.png">
   <link rel="canonical" href="{url}">
+  <link rel="alternate" type="text/markdown" href="{url_md}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/blog.css">
@@ -176,6 +177,7 @@ def main():
         md_text = md_path.read_text(encoding="utf-8")
         content_html = parse(md_text)
         url = f"{SITE_URL}/blog/{post['id']}.html"
+        url_md = f"{SITE_URL}/blog/{post['id']}.md"
 
         tags_html = "".join(f'<span class="tag">{t}</span>' for t in post.get("tags", []))
 
@@ -183,6 +185,7 @@ def main():
             title=post["title"],
             excerpt=post["excerpt"],
             url=url,
+            url_md=url_md,
             url_enc=url.replace(":", "%3A").replace("/", "%2F"),
             title_enc=post["title"].replace(" ", "%20").replace('"', "%22"),
             date_fmt=format_date(post["date"]),
@@ -195,6 +198,22 @@ def main():
         out_path = BLOG / f"{post['id']}.html"
         out_path.write_text(html_out, encoding="utf-8")
         print(f"wrote {out_path.relative_to(ROOT)}")
+
+        md_out = "\n".join([
+            "---",
+            f'title: "{post["title"]}"',
+            f'description: "{post["excerpt"]}"',
+            f'canonical: "{url}"',
+            f'date: "{post["date"]}"',
+            f'tags: [{", ".join(post.get("tags", []))}]',
+            "---",
+            "",
+            md_text.strip(),
+            "",
+        ])
+        md_out_path = BLOG / f"{post['id']}.md"
+        md_out_path.write_text(md_out, encoding="utf-8")
+        print(f"wrote {md_out_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

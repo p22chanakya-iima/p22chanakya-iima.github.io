@@ -212,7 +212,6 @@ const App = {
 
   async buildAgentMarkdown() {
     const profile = await this.loadJSON('profile.json');
-    const experience = await this.loadJSON('experience.json');
     const projects = await this.loadJSON('projects.json');
     let posts = [];
     if (typeof BlogLoader !== 'undefined') {
@@ -238,16 +237,6 @@ const App = {
     lines.push('---');
     lines.push('');
     lines.push('# Quick Reference');
-    lines.push('');
-
-    lines.push('## Experience');
-    lines.push('');
-    experience.experience.forEach(exp => {
-      const dates = exp.date_start ? `${exp.date_start} – ${exp.current ? 'Present' : exp.date_end}` : '';
-      lines.push(`- **${exp.role}**, ${exp.company}${dates ? ` (${dates})` : ''}`);
-      if (exp.description) lines.push(`  ${exp.description}`);
-      (exp.achievements || []).forEach(a => lines.push(`  - ${a}`));
-    });
     lines.push('');
 
     lines.push('## Vibe Coded Fun Apps');

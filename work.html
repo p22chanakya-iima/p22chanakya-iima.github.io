@@ -9,6 +9,7 @@
   <meta property="og:description" content="Projects and products I've built and shipped.">
   <meta property="og:image" content="https://p22chanakya-iima.github.io/images/og-image.png">
   <link rel="canonical" href="https://p22chanakya-iima.github.io/work.html">
+  <link rel="alternate" type="text/markdown" href="https://p22chanakya-iima.github.io/work.md">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -54,12 +55,124 @@
 
     <!-- Filters -->
     <div class="filter-tabs" id="filter-tabs">
-      <!-- Populated by JS -->
+      <!-- BUILD:filter-tabs -->
+<button class="filter-tab filter-tab--active" data-filter="All">All</button>
+<button class="filter-tab" data-filter="Side Project">Side Project</button>
+<!-- /BUILD:filter-tabs -->
     </div>
 
     <!-- Projects Grid -->
     <div class="projects-grid stagger" id="projects-grid">
-      <!-- Populated by JS from projects.json -->
+      <!-- BUILD:projects-grid -->
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/finflash.jpg" alt="FinFlash landing page" loading="lazy">
+  <h3 class="project-card__title">FinFlash</h3>
+  <p class="project-card__tagline">Live SEC filings and corporate events, extracted into Excel-ready data in minutes.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  
+  
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">FinTech</span></div>
+  <div class="project-detail project-detail--open">
+  <div class="project-detail__section">
+    <div class="project-detail__label">Problem</div>
+    <p class="project-detail__text">Investment analysts need SEC filing data fast. Reading a 10-K or 8-K by hand and rebuilding the numbers in Excel takes too long when a market-moving filing just dropped.</p>
+  </div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Insight</div>
+  <p class="project-detail__text">Junior equity researchers lose hours to grunt work — listening to investor calls and manually copying numbers out of press releases and filings into a spreadsheet — instead of doing actual analysis.</p>
+</div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Persona</div>
+  <p class="project-detail__text">Junior equity researchers and analysts who need structured, Excel-ready filing data instead of re-transcribing it by hand.</p>
+</div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Solution</div>
+    <p class="project-detail__text">Built a live market intelligence dashboard that tracks 10-K, 10-Q, and 8-K filings from major companies as they're filed. Each filing can be viewed instantly or extracted into structured, Excel-ready financials with one click. The backend runs on Supabase edge functions that fetch and parse filings, with a Postgres cache layer and a dedicated storage bucket for the source documents.</p>
+  </div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Impact</div>
+    <ul class="project-detail__list">
+      <li>Tracks live 10-K, 10-Q, and 8-K filings from companies like Netflix, Oracle, Salesforce, Nvidia, and Apple</li>
+<li>One-click extraction into structured, Excel-ready data</li>
+<li>Supabase-backed caching layer with service-role-only write access</li>
+    </ul>
+  </div>
+</div>
+  <div class="project-card__actions"><a href="https://filing-insight.lovable.app/" target="_blank" rel="noopener" class="btn btn--primary">View Live</a></div>
+</article>
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/padagemi.jpg" alt="Padagemi (పదగేమి) landing page" loading="lazy">
+  <h3 class="project-card__title">Padagemi (పదగేమి)</h3>
+  <p class="project-card__tagline">A 2-minute Telugu crossword — guess 4 words from 12 clues.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  
+  
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">Games</span></div>
+  <div class="project-detail project-detail--open">
+  <div class="project-detail__section">
+    <div class="project-detail__label">Problem</div>
+    <p class="project-detail__text">Wanted a quick, casual word game for Telugu speakers — something in the language itself, not just another English crossword.</p>
+  </div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Insight</div>
+  <p class="project-detail__text">Very few consumer products in India are actually built for the ~200 million homemakers who make up a huge, largely underserved audience — most consumer tech treats them as an afterthought rather than a primary user.</p>
+</div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Persona</div>
+  <p class="project-detail__text">Homemakers across India, especially Telugu speakers, looking for a quick, casual moment of fun in their own language rather than another English-first app.</p>
+</div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Solution</div>
+    <p class="project-detail__text">Built a mini Telugu crossword game in React: small 4-word grids, 12 clues, answers accepted in English, Tinglish, or Telugu script so there's no mental friction switching keyboards. Puzzle data is served from a Supabase Edge Function.</p>
+  </div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Impact</div>
+    <ul class="project-detail__list">
+      <li>Answers accepted in 3 input styles: English, Tinglish, Telugu</li>
+<li>Deployed on Vercel, backend on Supabase</li>
+<li>30+ puzzles, 12 clues each</li>
+    </ul>
+  </div>
+</div>
+  <div class="project-card__actions"><a href="https://padagemi-deploy.vercel.app" target="_blank" rel="noopener" class="btn btn--primary">View Live</a></div>
+</article>
+<article class="project-card fade-in">
+  <img class="project-card__image" src="images/projects/brand-size-matcher.jpg" alt="Brand Size Matcher landing page" loading="lazy">
+  <h3 class="project-card__title">Brand Size Matcher</h3>
+  <p class="project-card__tagline">Know your size in one brand? Find your match across 18 others.</p>
+  <div class="project-card__meta">Built it for fun · Side Project</div>
+  
+  
+  <div class="project-card__tags"><span class="tag">Web App</span><span class="tag">Side Project</span><span class="tag">Open Source</span></div>
+  <div class="project-detail project-detail--open">
+  <div class="project-detail__section">
+    <div class="project-detail__label">Problem</div>
+    <p class="project-detail__text">Clothing sizes are a mess. A Medium in Zara fits nothing like a Medium in H&M. Every online purchase is a gamble, and returns are a pain.</p>
+  </div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Insight</div>
+  <p class="project-detail__text">A pattern I kept noticing over years with friends and family: someone finds their true fit in exactly one brand, then can never find that same fit anywhere else. The same idea extends past clothing to shoes — some feet are wide, some are narrow, and most brands quietly optimize for one. Nike's lasts generally suit narrower feet; brands like Gully Labs fit wider feet better — but nothing tells you that upfront.</p>
+</div>
+  <div class="project-detail__section">
+  <div class="project-detail__label">Persona</div>
+  <p class="project-detail__text">Anyone who's found 'their size' in exactly one brand and dreads every new brand as a guessing game — extended from clothing to footwear, where foot width, not just length, quietly decides fit.</p>
+</div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Solution</div>
+    <p class="project-detail__text">Built a tool that uses IoU-based measurement matching to translate your known size in one brand to equivalent sizes across 18 brands — international and Indian D2C labels included.</p>
+  </div>
+  <div class="project-detail__section">
+    <div class="project-detail__label">Impact</div>
+    <ul class="project-detail__list">
+      <li>18 brands covered across 6 garment categories</li>
+<li>International + Indian D2C brands</li>
+<li>Open source — anyone can contribute</li>
+    </ul>
+  </div>
+</div>
+  <div class="project-card__actions"><a href="https://p22chanakya-iima.github.io/brand-size-matcher/" target="_blank" rel="noopener" class="btn btn--primary">View Live</a><a href="https://github.com/p22chanakya-iima/brand-size-matcher" target="_blank" rel="noopener" class="btn">GitHub</a></div>
+</article>
+<!-- /BUILD:projects-grid -->
     </div>
 
   </main>

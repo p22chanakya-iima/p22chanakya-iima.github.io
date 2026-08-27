@@ -9,6 +9,7 @@
   <meta property="og:description" content="Thoughts on product management, building, and learning.">
   <meta property="og:image" content="https://p22chanakya-iima.github.io/images/og-image.png">
   <link rel="canonical" href="https://p22chanakya-iima.github.io/writing.html">
+  <link rel="alternate" type="text/markdown" href="https://p22chanakya-iima.github.io/writing.md">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -54,12 +55,94 @@
 
     <!-- Tag Filter -->
     <div class="filter-tabs" id="tag-filter">
-      <!-- Populated by JS -->
+      <!-- BUILD:tag-filter -->
+<button class="filter-tab filter-tab--active" data-tag="All">All</button>
+<button class="filter-tab" data-tag="ai">ai</button>
+<button class="filter-tab" data-tag="product">product</button>
+<button class="filter-tab" data-tag="strategy">strategy</button>
+<button class="filter-tab" data-tag="code">code</button>
+<button class="filter-tab" data-tag="inference">inference</button>
+<button class="filter-tab" data-tag="enterprise">enterprise</button>
+<button class="filter-tab" data-tag="design">design</button>
+<button class="filter-tab" data-tag="LLM">LLM</button>
+<button class="filter-tab" data-tag="Second Order">Second Order</button>
+<!-- /BUILD:tag-filter -->
     </div>
 
     <!-- Posts List -->
     <div class="posts-list" id="all-posts">
-      <!-- Populated by JS from blog-posts.json -->
+      <!-- BUILD:all-posts -->
+<article class="post-card fade-in">
+  <a href="blog/inevitable-memory-doom.html" class="post-card__link">
+    <div class="post-card__date">Aug 16, 2026</div>
+    <h3 class="post-card__title">Inevitable Memory Doom</h3>
+    <p class="post-card__excerpt">Email, photos, and enterprise software each ran the same cycle: make accumulation effortless, then monetize the overflow once it becomes unmanageable. Agentic coding is about to run it again — the real opportunity is a product that prevents the pile from forming, not one that sells more storage after it does.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">product</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html" class="post-card__link">
+    <div class="post-card__date">Aug 3, 2026</div>
+    <h3 class="post-card__title">Code Is Getting Cheaper. Refactoring Is Getting More Expensive.</h3>
+    <p class="post-card__excerpt">cheap generation → larger, less-understood codebase → expensive archaeology → shallower refactors → accumulating illegibility → loss of future maneuverability.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">code</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/login-with-chatgpt-claude-gemini.html" class="post-card__link">
+    <div class="post-card__date">Jul 23, 2026</div>
+    <h3 class="post-card__title">The Case for "Login with ChatGPT/Claude/Gemini"</h3>
+    <p class="post-card__excerpt">AI consumer apps are priced like enterprise software because every interaction carries a metered inference bill. Millions of people already pay for Claude, ChatGPT, and Gemini and barely use their quota. Here's the economic case for letting builders tap that capacity, why OpenClaw already tried it and got shut down, and what would have to change for providers to open this door on purpose.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">strategy</span><span class="tag">product</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/ai-ready-for-inference.html" class="post-card__link">
+    <div class="post-card__date">Jul 15, 2026</div>
+    <h3 class="post-card__title">AI Is Ready for Its Next Phase: Inference</h3>
+    <p class="post-card__excerpt">Raw model capability is becoming abundant, and the premium on owning the single best model is starting to decline. The next moat is the inference control plane around the model.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">inference</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/advice-to-ceos-dont-rely-on-one-model.html" class="post-card__link">
+    <div class="post-card__date">Jun 15, 2026</div>
+    <h3 class="post-card__title">Advice to CEOs: Don't Rely on One Model</h3>
+    <p class="post-card__excerpt">The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">enterprise</span><span class="tag">strategy</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/ui-is-not-dead.html" class="post-card__link">
+    <div class="post-card__date">May 15, 2026</div>
+    <h3 class="post-card__title">UI Is Not Dead</h3>
+    <p class="post-card__excerpt">Chat and voice are becoming powerful interfaces for expressing intent, but people still need to see outcomes, compare alternatives, and remain in control. UI isn't dying. Its role is changing.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">ai</span><span class="tag">product</span><span class="tag">design</span></div>
+    </div>
+  </a>
+</article>
+<article class="post-card fade-in">
+  <a href="blog/first-post.html" class="post-card__link">
+    <div class="post-card__date">Feb 16, 2026</div>
+    <h3 class="post-card__title">Second order effects of code becoming cheap</h3>
+    <p class="post-card__excerpt">Code is becoming free, but the tacit and institutional knowledge that came with writing it isn't. AI just broke the only mechanism (juniors becoming seniors) that transmitted it, with real second-order effects on open source, code monoculture, and documentation.</p>
+    <div class="post-card__meta">
+      <div class="post-card__tags"><span class="tag">code</span><span class="tag">ai</span><span class="tag">LLM</span><span class="tag">Second Order</span></div>
+    </div>
+  </a>
+</article>
+<!-- /BUILD:all-posts -->
     </div>
 
   </main>

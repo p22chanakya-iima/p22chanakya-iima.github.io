@@ -1,0 +1,21 @@
+---
+title: "UI Is Not Dead"
+description: "Chat and voice are becoming powerful interfaces for expressing intent, but people still need to see outcomes, compare alternatives, and remain in control. UI isn't dying. Its role is changing."
+canonical: "https://p22chanakya-iima.github.io/blog/ui-is-not-dead.html"
+date: "2026-05-15"
+tags: [ai, product, design]
+---
+
+## UI Is Not Dead
+
+Chat and voice will become the primary way people express intent to software. Users will increasingly tell software what they want instead of navigating through menus and forms. But intent is only one part of interaction. People still need to see outcomes, compare alternatives, explore possibilities, correct mistakes, and decide what to do next. Language is excellent for asking. Graphical interfaces are better for understanding.
+
+The shift will resemble what happened with direct-to-consumer brands. Online distribution made purchasing more convenient. But many digital-first companies eventually opened physical stores because customers still wanted to touch products, compare them, experience the brand, and gain confidence before buying. Stores did not disappear. Their role changed. Similarly, AI will reduce the number of interfaces users must operate manually. It will increase the importance of interfaces used for exploration, inspection, and control.
+
+Lovable, Bolt, and similar AI builders make this visible. Whenever a new coding model launches, one of the first things people build is a website or an application. That is not accidental. A prompt or block of generated code becomes meaningful when the user can see it, interact with it, notice what feels wrong, and refine it. These companies are not proving that UI is becoming irrelevant. They are proving that demand for visual and interactive software is so strong that people want to generate it instantly.
+
+The future is therefore not chat replacing UI. It is chat and voice becoming **intent interfaces**, agents becoming the **execution layer**, and graphical UI becoming the **interaction and verification layer**. A user may ask an agent to plan a trip, analyze a business, design a room, or find a house. But they will still want to inspect the itinerary, compare charts, move objects around a canvas, browse photographs, study a map, and understand trade-offs visually.
+
+AI will kill plenty of bad UI: repetitive forms, confusing menus, unnecessary navigation, and screens that exist only because humans previously had to translate their intentions into machine-readable steps. But UI with great taste and deep understanding of human behaviour will have a long life. As implementation becomes abundant, the advantage shifts toward knowing what to show, what to hide, and what to automate. It also shifts toward knowing where the user needs to see, touch, compare, and remain in control.
+
+AI will reduce the number of interfaces we are forced to use. It will not eliminate the interfaces we choose to engage with.
