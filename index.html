@@ -9,6 +9,14 @@
 
   <!-- Canonical -->
   <link rel="canonical" href="https://p22chanakya-iima.github.io/">
+  <link rel="alternate" type="text/markdown" href="https://p22chanakya-iima.github.io/index.md">
+
+  <!-- ?mode=agent -> the dedicated agent view. Must run before render to avoid a flash of the human page. -->
+  <script>
+    if (new URLSearchParams(location.search).get('mode') === 'agent') {
+      location.replace('/agent/');
+    }
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Chanakya Yadav — Problem Solver & Builder">
@@ -21,6 +29,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://p22chanakya-iima.github.io/#person",
     "name": "Chanakya Yadav",
     "description": "Problem solver who builds things people want. Associate Director / Platform Product Manager at S&P Global, working on enterprise AI/agent platforms for financial data.",
     "jobTitle": "Associate Director, Platform Product Manager",
@@ -49,7 +58,15 @@
     "name": "Chanakya Yadav",
     "url": "https://p22chanakya-iima.github.io/",
     "description": "Personal portfolio: background, work, side projects, and writing.",
-    "author": { "@type": "Person", "name": "Chanakya Yadav" }
+    "author": { "@id": "https://p22chanakya-iima.github.io/#person" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://p22chanakya-iima.github.io/",
+    "mainEntity": { "@id": "https://p22chanakya-iima.github.io/#person" }
   }
   </script>
 
