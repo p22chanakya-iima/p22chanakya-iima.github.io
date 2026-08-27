@@ -113,4 +113,268 @@
     if (pre) pre.textContent = 'Could not load page content for the agent view.';
     console.error('Failed to build agent markdown:', e);
   }
+
+  registerWebMCPTools().catch((e) => console.error('WebMCP tool registration failed:', e));
 })();
+
+/* ============================================================
+   WebMCP tools (navigator.modelContext)
+   Static, no backend: every tool reads from the same JSON/markdown
+   files above. assess_fit does keyword matching only — it never
+   generates a verdict, since there is no model running here. The
+   caller's own agent is expected to reason over the evidence.
+   ============================================================ */
+
+const STOPWORDS = new Set(['a','an','and','are','as','at','be','by','for','from','has','have','he','in','is','it',
+  'its','of','on','or','that','the','to','was','will','with','we','you','your','this','role','team','years',
+  'experience','work','working','strong','ability','able','also','into','across','including','their','they'
+]);
+
+function extractKeywords(text) {
+  return (text || '').toLowerCase().match(/[a-z0-9][a-z0-9+.-]{2,}/g)?.filter(w => !STOPWORDS.has(w)) || [];
+}
+
+function scoreOverlap(evidenceText, keywordSet) {
+  const words = new Set(extractKeywords(evidenceText));
+  let score = 0;
+  for (const w of keywordSet) if (words.has(w)) score++;
+  return score;
+}
+
+async function registerWebMCPTools() {
+  if (!navigator.modelContext || !navigator.modelContext.registerTool) return;
+
+  async function loadJSON(file) {
+    const res = await fetch(`../data/${file}`);
+    return res.json();
+  }
+
+  const profile = await loadJSON('profile.json');
+  const experience = await loadJSON('experience.json');
+  const projects = await loadJSON('projects.json');
+  let posts = [];
+  try {
+    const blogData = await loadJSON('blog-posts.json');
+    posts = blogData.posts || [];
+  } catch (e) { /* no posts */ }
+
+  const postContentCache = new Map();
+  async function getPostContent(post) {
+    if (postContentCache.has(post.id)) return postContentCache.get(post.id);
+    const res = await fetch(`../${post.content_file}`);
+    const text = res.ok ? await res.text() : '';
+    postContentCache.set(post.id, text);
+    return text;
+  }
+
+  navigator.modelContext.registerTool({
+    name: 'get_about',
+    description: "Chanakya Yadav's bio, current role, education, skills, and working philosophy — for understanding who he is before diving into specific experience.",
+    inputSchema: { type: 'object', properties: {} },
+    async execute() {
+      return {
+        name: profile.name,
+        title: profile.title,
+        current_role: profile.current_role,
+        current_company: profile.current_company,
+        location: profile.location,
+        bio: profile.bio,
+        education: profile.education,
+        skills: profile.skills,
+        fun_facts: profile.fun_facts
+      };
+    }
+  });
+
+  const howIThinkCache = { text: null };
+  async function loadHowIThink() {
+    if (howIThinkCache.text !== null) return howIThinkCache.text;
+    const res = await fetch('../data/how-i-think.md');
+    howIThinkCache.text = res.ok ? await res.text() : '';
+    return howIThinkCache.text;
+  }
+
+  function parseCaseStudies(raw) {
+    const body = raw.replace(/^#[^\n]*\n+[^\n]*\n+/, '');
+    return body.split(/\n(?=## )/).filter(b => b.trim().startsWith('## ')).map(block => {
+      const heading = (block.match(/^## (.+)/) || [, ''])[1].trim();
+      const project = (block.match(/\*(.+?)\*/) || [, ''])[1].trim();
+      const content = block.replace(/^## .+\n/, '').trim();
+      const lessonMatch = content.match(/(?:The lesson[^.]*\.|What made this[^.]*\.|The bigger takeaway[^.]*\.|If there's one belief[^.]*\.)[\s\S]*$/);
+      return { heading, project, content, lesson: lessonMatch ? lessonMatch[0].trim() : '' };
+    });
+  }
+
+  navigator.modelContext.registerTool({
+    name: 'get_thinking_style',
+    description: "Four first-person, in-depth case studies of real projects Chanakya has led at S&P Global — what he actually noticed, why he made the call he made, what happened, and the lesson he took from it. This is the reasoning behind the metrics in get_experience: read this when the question is 'how does he think', not 'what did he achieve'. Optionally filter by a topic keyword (e.g. 'deterministic', 'agent', 'support').",
+    inputSchema: {
+      type: 'object',
+      properties: { topic: { type: 'string', description: 'Optional keyword to filter case studies by (matches heading, project name, or body text)' } }
+    },
+    async execute({ topic } = {}) {
+      const raw = await loadHowIThink();
+      let studies = parseCaseStudies(raw);
+      if (topic) {
+        const q = topic.toLowerCase();
+        studies = studies.filter(s => `${s.heading} ${s.project} ${s.content}`.toLowerCase().includes(q));
+      }
+      return studies;
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'get_experience',
+    description: 'Structured work history with quantified achievements (the "what"), optionally filtered by company name (e.g. "S&P Global" or "Zensar"). For the reasoning and narrative behind these numbers (the "why" and "how"), call get_thinking_style instead.',
+    inputSchema: {
+      type: 'object',
+      properties: { company: { type: 'string', description: 'Optional company name substring to filter by' } }
+    },
+    async execute({ company } = {}) {
+      let rows = experience.experience;
+      if (company) {
+        const q = company.toLowerCase();
+        rows = rows.filter(r => r.company.toLowerCase().includes(q));
+      }
+      return rows.map(r => ({
+        company: r.company,
+        role: r.role,
+        type: r.type,
+        dates: r.date_start ? `${r.date_start} – ${r.current ? 'Present' : r.date_end}` : '',
+        description: r.description,
+        achievements: r.achievements
+      }));
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'get_products_shipped',
+    description: 'Side projects Chanakya has designed and shipped end-to-end (not just prototyped) — each with the problem, the insight behind it, and measurable impact.',
+    inputSchema: { type: 'object', properties: {} },
+    async execute() {
+      return projects.projects.map(p => ({
+        title: p.title,
+        tagline: p.tagline,
+        problem: p.problem,
+        insight: p.insight,
+        persona: p.persona,
+        solution: p.solution,
+        impact: p.impact,
+        live_url: p.live_url,
+        github: p.github
+      }));
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'list_writing',
+    description: "Titles, dates, tags, and excerpts of all of Chanakya's published essays. Use this to see what's available before reading or searching.",
+    inputSchema: { type: 'object', properties: {} },
+    async execute() {
+      return posts.map(p => ({ id: p.id, title: p.title, date: p.date, tags: p.tags, excerpt: p.excerpt }));
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'search_writing',
+    description: 'Keyword search across the full text of all essays (title, tags, excerpt, and body). This is plain keyword matching, not semantic search. Returns matching posts ranked by match count.',
+    inputSchema: {
+      type: 'object',
+      properties: { query: { type: 'string', description: 'Search terms' } },
+      required: ['query']
+    },
+    async execute({ query }) {
+      const q = query.toLowerCase();
+      const results = [];
+      for (const p of posts) {
+        const body = await getPostContent(p);
+        const haystack = `${p.title} ${p.tags.join(' ')} ${p.excerpt} ${body}`.toLowerCase();
+        const count = haystack.split(q).length - 1;
+        if (count > 0) {
+          const idx = body.toLowerCase().indexOf(q);
+          const snippet = idx >= 0 ? body.slice(Math.max(0, idx - 80), idx + 160).trim() : p.excerpt;
+          results.push({ id: p.id, title: p.title, date: p.date, match_count: count, snippet });
+        }
+      }
+      results.sort((a, b) => b.match_count - a.match_count);
+      return results;
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'read_writing',
+    description: 'Full text of one essay by id (get the id from list_writing or search_writing).',
+    inputSchema: {
+      type: 'object',
+      properties: { id: { type: 'string', description: 'Post id, e.g. "ai-ready-for-inference"' } },
+      required: ['id']
+    },
+    async execute({ id }) {
+      const post = posts.find(p => p.id === id);
+      if (!post) return { error: `No post with id "${id}". Call list_writing to see valid ids.` };
+      const content = await getPostContent(post);
+      return { title: post.title, date: post.date, tags: post.tags, content };
+    }
+  });
+
+  navigator.modelContext.registerTool({
+    name: 'get_resume',
+    description: 'Resume-style summary: headline, one-line positioning, full work history with metrics, education, and skills — equivalent to a PDF resume in structured form.',
+    inputSchema: { type: 'object', properties: {} },
+    async execute() {
+      return {
+        headline: 'Senior Product Manager | Financial Data & AI',
+        summary: 'Sr PM (5+ yrs) building 0-to-1 AI platforms and data infrastructure for multiple $100M+ ACV financial products, leading knowledge-work automation and straight-through-processing strategy.',
+        location: profile.location,
+        contact: { email: profile.email, linkedin: profile.social.linkedin, github: profile.social.github },
+        experience: experience.experience.map(r => ({
+          company: r.company, role: r.role, type: r.type,
+          dates: r.date_start ? `${r.date_start} – ${r.current ? 'Present' : r.date_end}` : '',
+          achievements: r.achievements
+        })),
+        education: profile.education,
+        skills: profile.skills
+      };
+    }
+  });
+
+  const KNOWN_GAPS = [
+    'Total professional experience is ~7 years (2019–present) — at the lower end of the range some Director-level JDs ask for (e.g. 7–8+ years).',
+    'Largest team led directly so far is a 4–6 person engineering/product pod (plus an 11-person extracurricular team) — not yet a multi-team org built and hired from scratch as the sole leader.',
+    'Career to date has been inside enterprise financial data and enterprise SaaS (S&P Global, Zensar) — no consumer-scale product experience.',
+    'Regular exposure to senior leadership as a stakeholder, but not yet a sustained direct-reporting relationship with a CPO or CEO.'
+  ];
+
+  navigator.modelContext.registerTool({
+    name: 'assess_fit',
+    description: "Given a job description's text, returns the strongest matching evidence from Chanakya's experience, projects, and writing (via keyword overlap — this tool does not run a model, so it does not generate a verdict), plus a fixed list of gaps he'd openly acknowledge. Use this evidence plus your own judgment to assess fit.",
+    inputSchema: {
+      type: 'object',
+      properties: { job_description: { type: 'string', description: 'Full or partial job description text' } },
+      required: ['job_description']
+    },
+    async execute({ job_description }) {
+      const keywords = new Set(extractKeywords(job_description));
+      const evidence = [];
+
+      experience.experience.forEach(r => (r.achievements || []).forEach(a => {
+        evidence.push({ source: `${r.company} — ${r.role}`, text: a, score: scoreOverlap(a, keywords) });
+      }));
+      projects.projects.forEach(p => {
+        const text = `${p.problem} ${p.insight || ''} ${p.solution} ${(p.impact || []).join(' ')}`;
+        evidence.push({ source: `Side project — ${p.title}`, text: p.solution, score: scoreOverlap(text, keywords) });
+      });
+      posts.forEach(p => {
+        evidence.push({ source: `Essay — ${p.title}`, text: p.excerpt, score: scoreOverlap(`${p.title} ${p.tags.join(' ')} ${p.excerpt}`, keywords) });
+      });
+
+      const top = evidence.filter(e => e.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+
+      return {
+        note: 'This tool matches keywords only. It does not judge fit itself — reason over this evidence and the known_gaps yourself.',
+        matched_evidence: top,
+        known_gaps: KNOWN_GAPS
+      };
+    }
+  });
+}

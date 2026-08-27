@@ -9,9 +9,9 @@
     "Outside of work, I'm a trivia nerd, history buff, and NBA fan. Tim Duncan, Kevin Durant, and Anthony Edwards are my favorite players. I love how they approach the game and treat their teammates, on and off the court. I'll read about almost anything if it's interesting enough, and every new thing I pick up is another jenga block in how I see the world. Ask me about some obscure historical event and I'll probably have a take."
   ],
   "current_company": "S&P Global",
-  "current_role": "Associate Director",
-  "previous_company": "",
-  "location": "India",
+  "current_role": "Associate Director, Platform Product Manager (AgentOps)",
+  "previous_company": "Zensar (ZenLabs)",
+  "location": "Hyderabad, India",
   "email": "p22chanakya@iima.ac.in",
   "resume_url": "",
   "calendar_url": "",
@@ -33,16 +33,43 @@
   ],
   "education": [
     {
-      "degree": "MBA",
+      "degree": "MBA (PGP)",
       "institution": "Indian Institute of Management Ahmedabad",
       "year": "2022 – 2024",
       "notes": ""
+    },
+    {
+      "degree": "B.Tech",
+      "institution": "Indian Institute of Technology Madras",
+      "year": "2014 – 2019",
+      "notes": ""
     }
   ],
-  "open_to": [
-    "Interesting problems to solve",
-    "Side project collaborations",
-    "Trivia nights",
-    "Coffee chats"
-  ]
+  "skills": {
+    "product_leadership": [
+      "0-to-1 Strategy",
+      "Platform Strategy",
+      "Customer Discovery",
+      "Prioritization",
+      "Experimentation",
+      "Cross-Functional Collaboration",
+      "Product Roadmapping",
+      "Feature Specification",
+      "Hypothesis Testing"
+    ],
+    "tools_and_execution": [
+      "Python",
+      "SQL",
+      "BigQuery",
+      "Tableau",
+      "Figma",
+      "Miro",
+      "Excel",
+      "Jira",
+      "Windsurf",
+      "Azure",
+      "Claude Code"
+    ]
+  },
+  "open_to": ["Interesting problems to solve", "Side project collaborations", "Trivia nights", "Coffee chats"]
 }
