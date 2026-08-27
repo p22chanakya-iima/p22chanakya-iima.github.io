@@ -127,18 +127,47 @@
 
 const STOPWORDS = new Set(['a','an','and','are','as','at','be','by','for','from','has','have','he','in','is','it',
   'its','of','on','or','that','the','to','was','will','with','we','you','your','this','role','team','years',
-  'experience','work','working','strong','ability','able','also','into','across','including','their','they'
+  'experience','work','working','strong','ability','able','also','into','across','including','their','they',
+  'build','built','building','use','used','using','uses','make','made','making','makes','new','like','one','two',
+  'first','most','more','less','much','many','own','real','full','end','ends','start','started','need','needs',
+  'needed','give','given','gives','get','gets','got','around','without','within','together','instead','toward',
+  'towards','who','what','when','where','why','how','can','not','than','then','over','under','out','up','down',
+  'other','such','some','any','all','each','every','same','so','if','only','just','still','yet','both','while'
 ]);
 
 function extractKeywords(text) {
   return (text || '').toLowerCase().match(/[a-z0-9][a-z0-9+.-]{2,}/g)?.filter(w => !STOPWORDS.has(w)) || [];
 }
 
-function scoreOverlap(evidenceText, keywordSet) {
+function termFreq(words) {
+  const freq = new Map();
+  for (const w of words) freq.set(w, (freq.get(w) || 0) + 1);
+  return freq;
+}
+
+// IDF over the evidence corpus itself: a keyword shared by many evidence
+// items (e.g. "team", "product") is common and gets a low weight; a keyword
+// that appears in only one or two items (e.g. "deterministic", "forecasting")
+// is distinctive and gets a high weight. This is what lets a specific,
+// on-topic match outrank a generic one, regardless of text length.
+function buildIdfIndex(evidenceList) {
+  const docCount = evidenceList.length;
+  const docFreq = new Map();
+  evidenceList.forEach(e => {
+    new Set(extractKeywords(e.score_text)).forEach(w => docFreq.set(w, (docFreq.get(w) || 0) + 1));
+  });
+  const idf = new Map();
+  docFreq.forEach((df, w) => idf.set(w, Math.log((docCount + 1) / (df + 1)) + 1));
+  return idf;
+}
+
+function scoreEvidence(evidenceText, jdTermFreq, idf) {
   const words = new Set(extractKeywords(evidenceText));
   let score = 0;
-  for (const w of keywordSet) if (words.has(w)) score++;
-  return score;
+  for (const w of words) {
+    if (jdTermFreq.has(w)) score += jdTermFreq.get(w) * (idf.get(w) || 1);
+  }
+  return Math.round(score * 100) / 100;
 }
 
 async function registerWebMCPTools() {
@@ -354,24 +383,33 @@ async function registerWebMCPTools() {
       required: ['job_description']
     },
     async execute({ job_description }) {
-      const keywords = new Set(extractKeywords(job_description));
+      const jdTermFreq = termFreq(extractKeywords(job_description));
       const evidence = [];
 
       experience.experience.forEach(r => (r.achievements || []).forEach(a => {
-        evidence.push({ source: `${r.company} — ${r.role}`, text: a, score: scoreOverlap(a, keywords) });
+        evidence.push({ source: `${r.company} — ${r.role}`, score_text: a, text: a });
       }));
       projects.projects.forEach(p => {
-        const text = `${p.problem} ${p.insight || ''} ${p.solution} ${(p.impact || []).join(' ')}`;
-        evidence.push({ source: `Side project — ${p.title}`, text: p.solution, score: scoreOverlap(text, keywords) });
+        const score_text = `${p.problem} ${p.insight || ''} ${p.solution} ${(p.impact || []).join(' ')}`;
+        evidence.push({ source: `Side project — ${p.title}`, score_text, text: p.solution });
       });
       posts.forEach(p => {
-        evidence.push({ source: `Essay — ${p.title}`, text: p.excerpt, score: scoreOverlap(`${p.title} ${p.tags.join(' ')} ${p.excerpt}`, keywords) });
+        const score_text = `${p.title} ${p.tags.join(' ')} ${p.excerpt}`;
+        evidence.push({ source: `Essay — ${p.title}`, score_text, text: p.excerpt });
       });
+      try {
+        const raw = await loadHowIThink();
+        parseCaseStudies(raw).forEach(s => {
+          evidence.push({ source: `Case study — ${s.heading}`, score_text: `${s.heading} ${s.project} ${s.content}`, text: s.lesson || s.content.slice(0, 300) });
+        });
+      } catch (e) { /* case studies unavailable */ }
 
-      const top = evidence.filter(e => e.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+      const idf = buildIdfIndex(evidence);
+      const scored = evidence.map(e => ({ source: e.source, text: e.text, score: scoreEvidence(e.score_text, jdTermFreq, idf) }));
+      const top = scored.filter(e => e.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
 
       return {
-        note: 'This tool matches keywords only. It does not judge fit itself — reason over this evidence and the known_gaps yourself.',
+        note: 'This tool scores evidence by weighted keyword overlap (TF-IDF over the evidence corpus, not a model) — it does not judge fit itself. Reason over this evidence and known_gaps yourself.',
         matched_evidence: top,
         known_gaps: KNOWN_GAPS
       };
