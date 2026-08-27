@@ -3,23 +3,23 @@
 > Senior Product Manager (Associate Director, S&P Global) working on enterprise AI/agent platforms for financial data. This site is a personal portfolio: background, work, side projects, and writing.
 
 For a single machine-readable summary of who this person is, their experience, projects, and writing — read this first:
-- [Agent view](https://p22chanakya-iima.github.io/portfolio/agent/): structured summary built specifically for AI agents and crawlers. Also exposes WebMCP tools (get_about, get_experience, get_thinking_style, get_products_shipped, list_writing, search_writing, read_writing, get_resume, assess_fit) for agents that support navigator.modelContext.
+- [Agent view](https://p22chanakya-iima.github.io/agent/): structured summary built specifically for AI agents and crawlers. Also exposes WebMCP tools (get_about, get_experience, get_thinking_style, get_products_shipped, list_writing, search_writing, read_writing, get_resume, assess_fit) for agents that support navigator.modelContext.
 
 ## Pages
 
-- [About / Home](https://p22chanakya-iima.github.io/portfolio/index.html): bio, current role, philosophy.
-- [Experience](https://p22chanakya-iima.github.io/portfolio/work.html): work history.
-- [Writing](https://p22chanakya-iima.github.io/portfolio/writing.html): essay index.
-- [Contact](https://p22chanakya-iima.github.io/portfolio/contact.html)
+- [About / Home](https://p22chanakya-iima.github.io/index.html): bio, current role, philosophy.
+- [Experience](https://p22chanakya-iima.github.io/work.html): work history.
+- [Writing](https://p22chanakya-iima.github.io/writing.html): essay index.
+- [Contact](https://p22chanakya-iima.github.io/contact.html)
 
 ## Writing (individual essays, static HTML, no JS required to read)
 
-- [Code Is Getting Cheaper. Refactoring Is Getting More Expensive.](https://p22chanakya-iima.github.io/portfolio/blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html)
-- [The Case for "Login with ChatGPT/Claude/Gemini"](https://p22chanakya-iima.github.io/portfolio/blog/login-with-chatgpt-claude-gemini.html)
-- [AI Is Ready for Its Next Phase: Inference](https://p22chanakya-iima.github.io/portfolio/blog/ai-ready-for-inference.html)
-- [Advice to CEOs: Don't Rely on One Model](https://p22chanakya-iima.github.io/portfolio/blog/advice-to-ceos-dont-rely-on-one-model.html)
-- [UI Is Not Dead](https://p22chanakya-iima.github.io/portfolio/blog/ui-is-not-dead.html)
-- [Second order effects of code becoming cheap](https://p22chanakya-iima.github.io/portfolio/blog/first-post.html)
+- [Code Is Getting Cheaper. Refactoring Is Getting More Expensive.](https://p22chanakya-iima.github.io/blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html)
+- [The Case for "Login with ChatGPT/Claude/Gemini"](https://p22chanakya-iima.github.io/blog/login-with-chatgpt-claude-gemini.html)
+- [AI Is Ready for Its Next Phase: Inference](https://p22chanakya-iima.github.io/blog/ai-ready-for-inference.html)
+- [Advice to CEOs: Don't Rely on One Model](https://p22chanakya-iima.github.io/blog/advice-to-ceos-dont-rely-on-one-model.html)
+- [UI Is Not Dead](https://p22chanakya-iima.github.io/blog/ui-is-not-dead.html)
+- [Second order effects of code becoming cheap](https://p22chanakya-iima.github.io/blog/first-post.html)
 
 ## Notes
 

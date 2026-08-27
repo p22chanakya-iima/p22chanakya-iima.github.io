@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-SITE_URL = "https://p22chanakya-iima.github.io/portfolio"
+SITE_URL = "https://p22chanakya-iima.github.io"
 
 
 def load_json(name):

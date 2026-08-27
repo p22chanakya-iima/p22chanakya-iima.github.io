@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = "https://p22chanakya-iima.github.io/portfolio"
+SITE_URL = "https://p22chanakya-iima.github.io"
 
 STATIC_PAGES = ["", "/index.html", "/about.html", "/work.html", "/writing.html", "/contact.html", "/agent/"]
 

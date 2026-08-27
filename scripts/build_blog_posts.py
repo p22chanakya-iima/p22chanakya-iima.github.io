@@ -21,7 +21,7 @@ from render_markdown import parse, reading_time  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 BLOG = ROOT / "blog"
-SITE_URL = "https://p22chanakya-iima.github.io/portfolio"
+SITE_URL = "https://p22chanakya-iima.github.io"
 
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en">

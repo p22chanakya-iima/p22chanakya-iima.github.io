@@ -70,7 +70,7 @@
 
     lines.push('## Writing');
     lines.push('');
-    const siteUrl = 'https://p22chanakya-iima.github.io/portfolio';
+    const siteUrl = 'https://p22chanakya-iima.github.io';
     posts.forEach(post => {
       lines.push(`- **${post.title}** (${post.date})`);
       lines.push(`  ${post.excerpt}`);
