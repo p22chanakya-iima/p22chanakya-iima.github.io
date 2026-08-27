@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second order effects of code becoming cheap — Chanakya Yadav</title>
+  <meta name="description" content="Code is becoming free, but the tacit and institutional knowledge that came with writing it isn't. AI just broke the only mechanism (juniors becoming seniors) that transmitted it, with real second-order effects on open source, code monoculture, and documentation.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Second order effects of code becoming cheap">
+  <meta property="og:description" content="Code is becoming free, but the tacit and institutional knowledge that came with writing it isn't. AI just broke the only mechanism (juniors becoming seniors) that transmitted it, with real second-order effects on open source, code monoculture, and documentation.">
+  <meta property="og:url" content="https://p22chanakya-iima.github.io/portfolio/blog/first-post.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Second order effects of code becoming cheap",
+  "datePublished": "2026-02-16",
+  "description": "Code is becoming free, but the tacit and institutional knowledge that came with writing it isn't. AI just broke the only mechanism (juniors becoming seniors) that transmitted it, with real second-order effects on open source, code monoculture, and documentation.",
+  "url": "https://p22chanakya-iima.github.io/portfolio/blog/first-post.html",
+  "author": {
+    "@type": "Person",
+    "name": "Chanakya Yadav",
+    "url": "https://p22chanakya-iima.github.io/portfolio/index.html"
+  },
+  "keywords": "code, ai, LLM, Second Order"
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">CY</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+        <li><a href="../index.html#writing" class="nav__link">Writing</a></li>
+        <li><a href="../index.html#vibe-coding" class="nav__link">Vibe Coding</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li>
+          <a href="https://linkedin.com/in/chanakyapvs" class="nav__dm-btn" target="_blank" rel="noopener" aria-label="DM me on LinkedIn">
+            DM me
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </li>
+        <li><button class="nav__theme-toggle" aria-label="Toggle theme">&#127769;</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container--narrow">
+    <article class="blog-post">
+      <a href="../writing.html" class="blog-post__back">&larr; All posts</a>
+
+      <header class="blog-post__header">
+        <h1 class="blog-post__title" id="blog-post-title">Second order effects of code becoming cheap</h1>
+        <div class="blog-post__meta">
+          <span id="blog-post-date">Feb 16, 2026</span>
+          <span id="blog-post-readtime">5 min read</span>
+        </div>
+        <div class="blog-post__tags" id="blog-post-tags"><span class="tag">code</span><span class="tag">ai</span><span class="tag">LLM</span><span class="tag">Second Order</span></div>
+      </header>
+
+      <div class="blog-post__content" id="blog-post-content">
+<h2 id="second-order-effects-of-code-becoming-cheap">Second order effects of code becoming cheap</h2>
+<p>Code is now cheap. AI can generate it in seconds. But we're about to discover that code was never the valuable part. The valuable part was the three layers of knowledge that came with learning to write it. And we just eliminated the only mechanism for transmitting those layers.</p>
+<h3 id="the-three-layers">The Three Layers</h3>
+<p>Layer 1: Explicit Knowledge (What college teaches)</p>
+<ul><li>Algorithms, data structures, syntax</li><li>Design patterns, frameworks</li><li>Computer science theory</li></ul>
+<p>AI handles this perfectly and with unprecedented efficiency.</p>
+<p>Layer 2: Tacit Knowledge (What experience teaches)</p>
+<ul><li>"This code feels wrong even though it compiles"</li><li>"This will be unmaintainable in six months"</li><li>"This pattern causes bugs at scale"</li><li>Debugging intuition, performance instincts, simplicity bias</li></ul>
+<p>You can't learn this from documentation. You learn it by making mistakes: writing the clever optimization that becomes a nightmare, shipping on Friday and spending the weekend fixing it, making the breaking change that cascades through five systems. Years of small failures build intuition.</p>
+<p>Layer 3: Institutional Knowledge (What companies teach)</p>
+<ul><li>"We use Postgres because MySQL failed catastrophically in 2019"</li><li>"This API design is weird because Client X needed it"</li><li>"We deploy Thursdays because Friday deploys caused weekend incidents"</li><li>"This service split is regulatory, not technical"</li></ul>
+<p>This knowledge lives in people's heads and in company documentation that's a needle in a haystack. It's the "why" behind every "what." It's war stories, lessons learned the hard way. It's never fully documented.</p>
+<h3 id="the-mechanism-that-s-breaking">The Mechanism That's Breaking</h3>
+<p>Junior developers were the connective tissue. They:</p>
+<ul><li>Absorbed Layer 2 by making thousands of small mistakes over years</li><li>Absorbed Layer 3 by being present: meetings, post-mortems, hallway conversations</li><li>Passed both layers to the next generation when they became seniors</li></ul>
+<p>The ladder worked: Junior -> Mid -> Senior. Each rung spent years accumulating both layers. Now AI makes juniors economically unviable. Why pay $80K for a junior when a senior with AI can do the work of five juniors? The math makes sense. <em>Until you realize: Where do seniors come from?</em></p>
+<h3 id="a-moat-disappears">A Moat Disappears</h3>
+<p>Every software firm had three competitive advantages:</p>
+<ul><li>Talent (engineers who execute): AI just commoditized this</li><li>Money (capital to build): abundant, no longer differentiating</li><li>Taste (knowing what to build, i.e. strategy): the only moat that remains</li></ul>
+<p>When execution becomes free and capital is abundant, the only competition left is judgment.</p>
+<p>Who knows what's worth building? What will scale versus what will break? What users need versus what they ask for?</p>
+<p>But here's what nobody's saying: individual taste isn't enough. One brilliant engineer with impeccable judgment in a company with no culture of quality will fail. Their decisions get overridden. Their architecture gets hacked around.</p>
+<p><em>Taste must be embedded in culture to be defensible.</em></p>
+<p>A company where engineers, product, design, and leadership share a culture aligned on what "good" looks like becomes defensible. It will thrive. Culture is how taste scales beyond individuals. It's shared heuristics, collective memory, aligned values, common vocabulary.</p>
+<p>I ask again: <em>Where do seniors come from?</em></p>
+<p>Culture transmits through juniors. They're blank slates who absorb and propagate standards. Without them, culture stays in seniors' heads. When seniors leave, it dies.</p>
+<h3 id="second-order-effect-1-open-source-modules-die-a-slow-death">Second Order Effect 1: Open Source Modules Die a Slow Death</h3>
+<p>OSS maintenance dies. There was an unwritten agreement between engineers around the world: share specialist work with each other, in the form of open source modules, to create positive externalities. If code is easy to build, engineers will lose the incentive to open source their code for the greater good. This multiplayer game theory leads to a Nash equilibrium of no sharing or little sharing.</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>Other Engineers Share</th><th>Other Engineers Hoard</th></tr></thead><tbody><tr><td><strong>You Share</strong></td><td>(8, 8) - Best outcome<br>Everyone benefits from collective library<br>Network effects compound</td><td>(3, 6) - You're exploited<br>You give value, get nothing<br>Others free-ride</td></tr><tr><td><strong>You Hoard</strong></td><td>(6, 3) - You free-ride<br>You benefit from others, contribute nothing<br>Selfish but sustainable</td><td>(2, 2) - Everyone loses<br>Everyone rebuilds wheels<br>Massive waste</td></tr></tbody></table></div>
+<p><strong>Nash Equilibrium:</strong> (Share, Share) = (8, 8) <strong>Why it held:</strong> Mutual sharing dominated because coordination costs made hoarding collectively terrible. The threat of (2,2) kept everyone cooperating.</p>
+<p>Post AI:</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>Other Engineers Share</th><th>Other Engineers Hoard</th></tr></thead><tbody><tr><td><strong>You Share</strong></td><td>(4, 4) - Mediocre outcome<br>AI can generate most of it anyway<br>Your specialized knowledge trains AI to replace you<br>Reputation signal worth less</td><td>(-2, 7) - <strong>You're destroyed</strong><br>You give away competitive advantage<br>Others use your knowledge + AI<br>You get automated<br><strong>Worst personal outcome</strong></td></tr><tr><td><strong>You Hoard</strong></td><td>(7, -2) - <strong>You win</strong><br>You use others' OSS + AI<br>Keep your edge proprietary<br>Job security maintained</td><td>(5, 5) - New equilibrium<br>Everyone protects themselves<br>Less sharing but AI compensates<br><strong>Most stable outcome</strong></td></tr></tbody></table></div>
+<p><strong>Nash Equilibrium:</strong> (Hoard, Hoard) = (5, 5)</p>
+<h3 id="second-order-effect-2-mono-culture-code">Second Order Effect 2: Mono-Culture Code</h3>
+<p>Everyone uses the same AI trained on the same code patterns. Systems start looking identical. Same architectures. Same vulnerabilities. A security flaw in an AI-suggested authentication pattern compromises thousands of companies simultaneously. Diversity of implementation was unintentional security. Homogeneity creates systemic risk.</p>
+<h3 id="second-order-effect-3-death-of-quality-documentation">Second Order Effect 3: Death of Quality Documentation</h3>
+<p>Here's a perverse incentive nobody's talking about: documentation made code cheap by feeding LLMs. Now engineers will protect themselves by not documenting.</p>
+<p>The logic is simple: detailed documentation becomes the prompt that automates you. If you write down exactly how you architect systems, what trade-offs you consider, and why you make decisions, you've just created the training data that replaces you.</p>
+<p>So engineers hoard knowledge. They keep the "why" in their heads. They make themselves indispensable by being the only ones who understand the system. Documentation becomes deliberately vague, incomplete, or nonexistent.</p>
+<p>This accelerates the institutional knowledge collapse. When they leave, everything leaves with them. But from their perspective, it's rational self-preservation.</p>
+<p>The same documentation that was supposed to preserve knowledge now incentivizes its destruction.</p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <div class="blog-post__share">
+          <a class="blog-post__share-btn" id="share-twitter" href="https://twitter.com/intent/tweet?text=Second%20order%20effects%20of%20code%20becoming%20cheap&amp;url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Ffirst-post.html" target="_blank" rel="noopener">Share on X</a>
+          <a class="blog-post__share-btn" id="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Ffirst-post.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <button class="blog-post__share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!'})">Copy link</button>
+        </div>
+        <a href="../writing.html" class="blog-post__back">&larr; Back to all posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Chanakya Yadav. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav__theme-toggle');
+      if (toggle) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          const root = document.documentElement;
+          root.style.setProperty('--color-primary', '#F0F0F0');
+          root.style.setProperty('--color-secondary', '#A0A0A0');
+          root.style.setProperty('--color-accent', '#4D9FFF');
+          root.style.setProperty('--color-accent-hover', '#6BB3FF');
+          root.style.setProperty('--color-bg', '#111111');
+          root.style.setProperty('--color-bg-alt', '#1A1A1A');
+          root.style.setProperty('--color-muted', '#222222');
+          root.style.setProperty('--color-border', '#333333');
+          root.style.setProperty('--color-nav-bg', 'rgba(17,17,17,0.92)');
+          toggle.textContent = '\u2600\uFE0F';
+        }
+        toggle.addEventListener('click', () => {
+          const isDark = localStorage.getItem('theme') === 'dark';
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          location.reload();
+        });
+      }
+      const menuToggle = document.querySelector('.nav__mobile-toggle');
+      const links = document.querySelector('.nav__links');
+      if (menuToggle && links) {
+        menuToggle.addEventListener('click', () => links.classList.toggle('nav__links--open'));
+      }
+    });
+  </script>
+</body>
+</html>

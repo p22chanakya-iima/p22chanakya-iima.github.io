@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Is Getting Cheaper. Refactoring Is Getting More Expensive. — Chanakya Yadav</title>
+  <meta name="description" content="cheap generation → larger, less-understood codebase → expensive archaeology → shallower refactors → accumulating illegibility → loss of future maneuverability.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Code Is Getting Cheaper. Refactoring Is Getting More Expensive.">
+  <meta property="og:description" content="cheap generation → larger, less-understood codebase → expensive archaeology → shallower refactors → accumulating illegibility → loss of future maneuverability.">
+  <meta property="og:url" content="https://p22chanakya-iima.github.io/portfolio/blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Code Is Getting Cheaper. Refactoring Is Getting More Expensive.",
+  "datePublished": "2026-08-03",
+  "description": "cheap generation \u2192 larger, less-understood codebase \u2192 expensive archaeology \u2192 shallower refactors \u2192 accumulating illegibility \u2192 loss of future maneuverability.",
+  "url": "https://p22chanakya-iima.github.io/portfolio/blog/code-is-getting-cheaper-refactoring-is-getting-more-expensive.html",
+  "author": {
+    "@type": "Person",
+    "name": "Chanakya Yadav",
+    "url": "https://p22chanakya-iima.github.io/portfolio/index.html"
+  },
+  "keywords": "ai, code, strategy"
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">CY</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+        <li><a href="../index.html#writing" class="nav__link">Writing</a></li>
+        <li><a href="../index.html#vibe-coding" class="nav__link">Vibe Coding</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li>
+          <a href="https://linkedin.com/in/chanakyapvs" class="nav__dm-btn" target="_blank" rel="noopener" aria-label="DM me on LinkedIn">
+            DM me
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </li>
+        <li><button class="nav__theme-toggle" aria-label="Toggle theme">&#127769;</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container--narrow">
+    <article class="blog-post">
+      <a href="../writing.html" class="blog-post__back">&larr; All posts</a>
+
+      <header class="blog-post__header">
+        <h1 class="blog-post__title" id="blog-post-title">Code Is Getting Cheaper. Refactoring Is Getting More Expensive.</h1>
+        <div class="blog-post__meta">
+          <span id="blog-post-date">Aug 3, 2026</span>
+          <span id="blog-post-readtime">6 min read</span>
+        </div>
+        <div class="blog-post__tags" id="blog-post-tags"><span class="tag">ai</span><span class="tag">code</span><span class="tag">strategy</span></div>
+      </header>
+
+      <div class="blog-post__content" id="blog-post-content">
+<h2 id="code-is-getting-cheaper-refactoring-is-getting-more-expensive">Code Is Getting Cheaper. Refactoring Is Getting More Expensive.</h2>
+<p>AI can write a new feature in hours. That does not mean it can safely change the same feature six months later.</p>
+<p>This sounds contradictory. If a model can generate code, it should also be able to refactor it. The syntax is not any harder. Moving functions, changing interfaces, removing duplication, and rewriting modules are all things models already do well.</p>
+<p>But writing code and refactoring code are different jobs.</p>
+<p>Writing asks: can you produce something that works?</p>
+<p>Refactoring asks: can you change the structure without changing anything that matters?</p>
+<p>The first problem is mostly implementation. The second is mostly understanding.</p>
+<p>That is why code is getting cheaper while refactoring is becoming more expensive.</p>
+<h3 id="most-of-the-cost-comes-before-the-code-changes">Most of the cost comes before the code changes</h3>
+<p>A deep refactor begins with archaeology.</p>
+<p>The engineer has to understand which behavior is intentional, which behavior is accidental, what other modules depend on it, which assumptions live outside the code, and what will break if an apparently strange decision is "cleaned up."</p>
+<p>The actual code change may take a day. Building enough confidence to make it may take three weeks.</p>
+<p>Before AI, some of that comprehension cost was paid while the software was being written. Implementation was slow, but slowness performed an accidental function. Engineers repeatedly engaged with the architecture as they added to it. They knew why a function existed because they had argued about it, written it, broken it, and fixed it.</p>
+<p>AI separates production from comprehension.</p>
+<p>A team can now generate code much faster than it can build a mental model of that code. Similar problems get solved differently across sessions. Tests confirm that each solution works locally. Documentation describes what the code does, but often misses why the system was shaped that way.</p>
+<p>The feature ships faster.</p>
+<p>The understanding required to change it is deferred.</p>
+<p>Refactoring is where the bill arrives.</p>
+<h3 id="ask-the-ai-to-explain-it-does-not-remove-the-cost">"Ask the AI to explain it" does not remove the cost</h3>
+<p>AI can read an unfamiliar module and produce a convincing explanation. It can trace dependencies, identify duplication, and propose a cleaner design.</p>
+<p>That is useful. It is not the same as understanding.</p>
+<p>The difficult part of refactoring is not generating a plausible account of the system. It is knowing whether that account is complete. If no engineer holds the relevant mental model, the team needs AI to explain what AI previously wrote, but lacks an independent way to verify the explanation.</p>
+<p>The dependency becomes circular.</p>
+<p>The tool explains the system because the humans no longer understand it. The humans approve the refactor because the same tool says its explanation is correct.</p>
+<p>Tests reduce this risk, but tests preserve observed behavior, not necessarily intent. A generated test suite may prove that the system continues doing what it does today. It cannot always tell you whether today's behavior was a deliberate business rule, a temporary workaround, or an old mistake everyone has forgotten.</p>
+<p>Refactoring therefore becomes safer at the mechanical layer and more uncertain at the judgment layer.</p>
+<h3 id="refactoring-starts-to-mean-something-different">Refactoring starts to mean something different</h3>
+<p>When full comprehension becomes expensive, teams do not stop refactoring. They change what they call a refactor.</p>
+<p>A deep refactor reconstructs the system's model, redraws its boundaries, and removes the source of the complexity.</p>
+<p>A shallow refactor patches the local problem, introduces another adapter, and leaves the underlying structure alone because nobody is confident enough to touch it.</p>
+<p>AI makes the second kind extremely cheap.</p>
+<p>This creates a strange outcome: teams refactor more frequently while the codebase becomes less refactorable. Each local improvement works. Each one also adds another interpretation of how the system is supposed to behave.</p>
+<p>The code does not necessarily become broken. It becomes illegible.</p>
+<p>Classic technical debt means the team knows where the mess is and could clean it up given enough time. Technical illegibility means the team no longer knows what a clean version should preserve.</p>
+<p>The first has a repayment cost.</p>
+<p>The second has an unknown principal.</p>
+<h3 id="the-cost-does-not-rise-gradually">The cost does not rise gradually</h3>
+<p>AI-generated code can create the impression of sustained velocity for a long time.</p>
+<p>Features keep shipping. Tests keep passing. Local changes remain easy because the model can navigate the complexity it helped create.</p>
+<p>Then the company needs to make a change that crosses several boundaries: replace the billing model, redesign permissions, consolidate customer data, meet a new compliance requirement, or integrate an acquisition.</p>
+<p>The codebase has to be understood as a system rather than edited as a collection of files.</p>
+<p>That is where the cost becomes discontinuous.</p>
+<p>The company does not slow down by ten percent. It discovers that a strategically important change cannot be estimated confidently. Senior engineers spend weeks reconstructing dependencies. Every modification produces an unexpected effect somewhere else. Eventually, rewriting the system begins to look cheaper than understanding it.</p>
+<p>Velocity and refactoring cost are the same variable measured at different points in time. The speed gained during generation reappears as uncertainty during change.</p>
+<h3 id="not-every-part-of-the-system-deserves-protection">Not every part of the system deserves protection</h3>
+<p>The answer is not to prevent AI from generating code quickly.</p>
+<p>Some code should be cheap and disposable. An internal dashboard, a temporary experiment, or a feature likely to be killed does not need to remain elegant for five years. If understanding it becomes difficult, rewriting it may be the rational choice.</p>
+<p>The calculation changes for authentication, billing, permissions, core workflows, and the company's primary data model. Those systems will be changed again. Debt there is expensive because the company will be forced to repay it, usually during a moment when the business cannot afford delay.</p>
+<p>Organizations should therefore decide which parts of the codebase must remain refactorable.</p>
+<p>Core modules need explicit ownership, recorded architectural intent, narrow interfaces, and mechanically enforced boundaries. Peripheral modules can absorb more generation speed and more entropy.</p>
+<p>The objective is not a pristine codebase. It is preserving the ability to change the parts that determine what the company can do next.</p>
+<h3 id="refactoring-needs-its-own-product-workflow">Refactoring needs its own product workflow</h3>
+<p>Today, refactoring is usually treated as another prompt inside the same tool used to generate features.</p>
+<p>"Refactor this module."</p>
+<p>That is too close to performing surgery after asking only where it hurts.</p>
+<p>A serious refactoring product would begin in read-only mode. It would map dependencies, identify invariants, retrieve the decisions that created the current structure, and show which behaviors lack reliable tests. It would produce a change plan before touching code. A human would approve the boundaries of the change, and execution would happen in small, reversible steps.</p>
+<p>This is closer to a database migration than autocomplete.</p>
+<p>The deeper opportunity is a system that remembers architectural intent between refactors. Code repositories preserve what changed. They do a poor job of preserving why a boundary exists, why an apparently cleaner approach was rejected, or which business assumption a strange piece of code protects.</p>
+<p>The product that owns that history can make future refactors cheaper. Not because it writes replacement code faster, but because it reduces the archaeology required before replacement is safe.</p>
+<p>AI will produce more software, more quickly, with more variations in how the same problem is solved. That guarantees more refactoring, not less.</p>
+<p>The winning coding tool may therefore not be the one that generates the most code.</p>
+<p>It may be the one that leaves behind a codebase the company can still afford to change.</p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <div class="blog-post__share">
+          <a class="blog-post__share-btn" id="share-twitter" href="https://twitter.com/intent/tweet?text=Code%20Is%20Getting%20Cheaper.%20Refactoring%20Is%20Getting%20More%20Expensive.&amp;url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fcode-is-getting-cheaper-refactoring-is-getting-more-expensive.html" target="_blank" rel="noopener">Share on X</a>
+          <a class="blog-post__share-btn" id="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fcode-is-getting-cheaper-refactoring-is-getting-more-expensive.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <button class="blog-post__share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!'})">Copy link</button>
+        </div>
+        <a href="../writing.html" class="blog-post__back">&larr; Back to all posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Chanakya Yadav. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav__theme-toggle');
+      if (toggle) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          const root = document.documentElement;
+          root.style.setProperty('--color-primary', '#F0F0F0');
+          root.style.setProperty('--color-secondary', '#A0A0A0');
+          root.style.setProperty('--color-accent', '#4D9FFF');
+          root.style.setProperty('--color-accent-hover', '#6BB3FF');
+          root.style.setProperty('--color-bg', '#111111');
+          root.style.setProperty('--color-bg-alt', '#1A1A1A');
+          root.style.setProperty('--color-muted', '#222222');
+          root.style.setProperty('--color-border', '#333333');
+          root.style.setProperty('--color-nav-bg', 'rgba(17,17,17,0.92)');
+          toggle.textContent = '\u2600\uFE0F';
+        }
+        toggle.addEventListener('click', () => {
+          const isDark = localStorage.getItem('theme') === 'dark';
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          location.reload();
+        });
+      }
+      const menuToggle = document.querySelector('.nav__mobile-toggle');
+      const links = document.querySelector('.nav__links');
+      if (menuToggle && links) {
+        menuToggle.addEventListener('click', () => links.classList.toggle('nav__links--open'));
+      }
+    });
+  </script>
+</body>
+</html>

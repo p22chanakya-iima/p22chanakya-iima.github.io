@@ -32,7 +32,7 @@ const BlogLoader = {
     const items = limit ? posts.slice(0, limit) : posts;
     container.innerHTML = items.map(post => `
       <article class="post-card fade-in">
-        <a href="blog/post-template.html?post=${post.id}" class="post-card__link">
+        <a href="blog/${post.id}.html" class="post-card__link">
           <div class="post-card__date">${this.formatDate(post.date)}</div>
           <h3 class="post-card__title">${post.title}</h3>
           <p class="post-card__excerpt">${post.excerpt}</p>

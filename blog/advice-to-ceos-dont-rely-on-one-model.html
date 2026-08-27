@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advice to CEOs: Don't Rely on One Model — Chanakya Yadav</title>
+  <meta name="description" content="The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Advice to CEOs: Don't Rely on One Model">
+  <meta property="og:description" content="The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task.">
+  <meta property="og:url" content="https://p22chanakya-iima.github.io/portfolio/blog/advice-to-ceos-dont-rely-on-one-model.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Advice to CEOs: Don't Rely on One Model",
+  "datePublished": "2026-06-15",
+  "description": "The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task.",
+  "url": "https://p22chanakya-iima.github.io/portfolio/blog/advice-to-ceos-dont-rely-on-one-model.html",
+  "author": {
+    "@type": "Person",
+    "name": "Chanakya Yadav",
+    "url": "https://p22chanakya-iima.github.io/portfolio/index.html"
+  },
+  "keywords": "ai, enterprise, strategy"
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">CY</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+        <li><a href="../index.html#writing" class="nav__link">Writing</a></li>
+        <li><a href="../index.html#vibe-coding" class="nav__link">Vibe Coding</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li>
+          <a href="https://linkedin.com/in/chanakyapvs" class="nav__dm-btn" target="_blank" rel="noopener" aria-label="DM me on LinkedIn">
+            DM me
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </li>
+        <li><button class="nav__theme-toggle" aria-label="Toggle theme">&#127769;</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container--narrow">
+    <article class="blog-post">
+      <a href="../writing.html" class="blog-post__back">&larr; All posts</a>
+
+      <header class="blog-post__header">
+        <h1 class="blog-post__title" id="blog-post-title">Advice to CEOs: Don't Rely on One Model</h1>
+        <div class="blog-post__meta">
+          <span id="blog-post-date">Jun 15, 2026</span>
+          <span id="blog-post-readtime">3 min read</span>
+        </div>
+        <div class="blog-post__tags" id="blog-post-tags"><span class="tag">ai</span><span class="tag">enterprise</span><span class="tag">strategy</span></div>
+      </header>
+
+      <div class="blog-post__content" id="blog-post-content">
+<h2 id="advice-to-enterprises-don-t-rely-on-one-model">Advice to Enterprises: Don't Rely on One Model</h2>
+<p>The worst AI architecture an enterprise can build today is one where a single model becomes the source of truth for an important task. OpenAI, Anthropic, Google, and future frontier labs will continue to improve rapidly, but each vendor will also change its pricing, policies, rate limits, model behaviour, and product strategy. A workflow that depends entirely on one model may look efficient today and become a business-continuity risk tomorrow.</p>
+<p>The answer is not simply to keep a second API key available. For important work, enterprises should deliberately ask models from different vendors to perform, critique, or verify the same task. One model can generate an answer, another can independently review it, and a third can be invoked when the results disagree. Different models may also play different roles: one for planning, another for execution, and a cheaper or specialized model for verification. This reduces the risk that one vendor's blind spots, refusals, regressions, or outages silently determine the final outcome.</p>
+<p>The durable moat should not be access to the model currently leading a benchmark. That advantage will keep changing. The moat should be the system around the models: domain-specific data, context engineering, tool integrations, workflow decomposition, permissions, evaluation datasets, and feedback loops. A general model can reason. But it does not know what "correct" means for a bank, hospital, manufacturer, or market-intelligence company. The enterprise must define correctness through its own data, operating rules, historical outcomes, and risk tolerance.</p>
+<p>This also changes how companies should think about portability. Documents and factual memory can often sit outside the model and remain reusable. But prompts, tool schemas, cached workflows, and agent behaviour frequently become tuned to one provider. The real cost of switching models is not moving the data. It is re-verifying the system. Every important prompt, tool call, edge case, refusal pattern, and downstream action must be tested again. The enterprise that owns a strong cross-model evaluation loop has real model choice. The one that does not is locked in, even when its architecture appears multi-model on paper.</p>
+<p>The winning architecture will therefore be a multi-model control plane rather than a thin router. It should know which models are approved, which tasks each performs best, and how much they cost. It should also know when outputs require comparison and what happens when confidence is low. It should keep enterprise context and evaluation data under the company's control, continuously test new models against real workflows, and maintain a working fallback for every critical process.</p>
+<p>Enterprises do not need to treat every model as perfectly interchangeable, nor should they avoid specializing around a strong model. A primary model may still be the best choice for a particular workflow. The mistake is allowing that specialization to become dependence. In the next phase of AI, models will continue to improve and commoditize. The companies that win will not be those that happened to choose the best model once. They will be those that build the tooling, context, grounding, and evaluation machinery to make many models useful. They will also know when none of them should be trusted alone.</p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <div class="blog-post__share">
+          <a class="blog-post__share-btn" id="share-twitter" href="https://twitter.com/intent/tweet?text=Advice%20to%20CEOs:%20Don't%20Rely%20on%20One%20Model&amp;url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fadvice-to-ceos-dont-rely-on-one-model.html" target="_blank" rel="noopener">Share on X</a>
+          <a class="blog-post__share-btn" id="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fadvice-to-ceos-dont-rely-on-one-model.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <button class="blog-post__share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!'})">Copy link</button>
+        </div>
+        <a href="../writing.html" class="blog-post__back">&larr; Back to all posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Chanakya Yadav. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav__theme-toggle');
+      if (toggle) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          const root = document.documentElement;
+          root.style.setProperty('--color-primary', '#F0F0F0');
+          root.style.setProperty('--color-secondary', '#A0A0A0');
+          root.style.setProperty('--color-accent', '#4D9FFF');
+          root.style.setProperty('--color-accent-hover', '#6BB3FF');
+          root.style.setProperty('--color-bg', '#111111');
+          root.style.setProperty('--color-bg-alt', '#1A1A1A');
+          root.style.setProperty('--color-muted', '#222222');
+          root.style.setProperty('--color-border', '#333333');
+          root.style.setProperty('--color-nav-bg', 'rgba(17,17,17,0.92)');
+          toggle.textContent = '\u2600\uFE0F';
+        }
+        toggle.addEventListener('click', () => {
+          const isDark = localStorage.getItem('theme') === 'dark';
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          location.reload();
+        });
+      }
+      const menuToggle = document.querySelector('.nav__mobile-toggle');
+      const links = document.querySelector('.nav__links');
+      if (menuToggle && links) {
+        menuToggle.addEventListener('click', () => links.classList.toggle('nav__links--open'));
+      }
+    });
+  </script>
+</body>
+</html>

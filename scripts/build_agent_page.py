@@ -96,7 +96,7 @@ def build_markdown():
     for post in posts:
         lines.append(f"- **{post['title']}** ({post['date']})")
         lines.append(f"  {post['excerpt']}")
-        lines.append(f"  Link: {SITE_URL}/blog/post-template.html?post={post['id']}")
+        lines.append(f"  Link: {SITE_URL}/blog/{post['id']}.html")
     lines.append("")
 
     lines.append("## Contact")

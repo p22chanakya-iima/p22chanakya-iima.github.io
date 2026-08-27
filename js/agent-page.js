@@ -74,7 +74,7 @@
     posts.forEach(post => {
       lines.push(`- **${post.title}** (${post.date})`);
       lines.push(`  ${post.excerpt}`);
-      lines.push(`  Link: ${siteUrl}/blog/post-template.html?post=${post.id}`);
+      lines.push(`  Link: ${siteUrl}/blog/${post.id}.html`);
     });
     lines.push('');
 

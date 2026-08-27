@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Is Ready for Its Next Phase: Inference — Chanakya Yadav</title>
+  <meta name="description" content="Raw model capability is becoming abundant, and the premium on owning the single best model is starting to decline. The next moat is the inference control plane around the model.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Is Ready for Its Next Phase: Inference">
+  <meta property="og:description" content="Raw model capability is becoming abundant, and the premium on owning the single best model is starting to decline. The next moat is the inference control plane around the model.">
+  <meta property="og:url" content="https://p22chanakya-iima.github.io/portfolio/blog/ai-ready-for-inference.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Is Ready for Its Next Phase: Inference",
+  "datePublished": "2026-07-15",
+  "description": "Raw model capability is becoming abundant, and the premium on owning the single best model is starting to decline. The next moat is the inference control plane around the model.",
+  "url": "https://p22chanakya-iima.github.io/portfolio/blog/ai-ready-for-inference.html",
+  "author": {
+    "@type": "Person",
+    "name": "Chanakya Yadav",
+    "url": "https://p22chanakya-iima.github.io/portfolio/index.html"
+  },
+  "keywords": "ai, inference, strategy"
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">CY</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+        <li><a href="../index.html#writing" class="nav__link">Writing</a></li>
+        <li><a href="../index.html#vibe-coding" class="nav__link">Vibe Coding</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li>
+          <a href="https://linkedin.com/in/chanakyapvs" class="nav__dm-btn" target="_blank" rel="noopener" aria-label="DM me on LinkedIn">
+            DM me
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </li>
+        <li><button class="nav__theme-toggle" aria-label="Toggle theme">&#127769;</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container--narrow">
+    <article class="blog-post">
+      <a href="../writing.html" class="blog-post__back">&larr; All posts</a>
+
+      <header class="blog-post__header">
+        <h1 class="blog-post__title" id="blog-post-title">AI Is Ready for Its Next Phase: Inference</h1>
+        <div class="blog-post__meta">
+          <span id="blog-post-date">Jul 15, 2026</span>
+          <span id="blog-post-readtime">4 min read</span>
+        </div>
+        <div class="blog-post__tags" id="blog-post-tags"><span class="tag">ai</span><span class="tag">inference</span><span class="tag">strategy</span></div>
+      </header>
+
+      <div class="blog-post__content" id="blog-post-content">
+<h2 id="ai-is-ready-for-its-next-phase-inference">AI Is Ready for Its Next Phase: Inference</h2>
+<p>AI's first phase was defined by frontier-model progress: larger training runs, better benchmarks, longer context windows, increasingly capable reasoning. That phase is not ending. Frontier labs will remain essential because they keep expanding what machines can do. But raw model capability is now abundant, and the premium on owning the single best model is declining. The cost of accessing GPT-3.5-level intelligence fell from about $20 per million tokens in November 2022 to $0.07 by October 2024. That's a reduction of more than 280 times. Leading open-weight models have moved close enough to proprietary models that they're already economically sufficient for many real workloads.</p>
+<p>This changes the central product question. Companies will increasingly stop asking, "Which model is smartest?" and instead ask, "What is the cheapest model that reliably completes this step?" A classification task, document extraction workflow, support query, or coding suggestion may not need the most powerful frontier model. A production system may use a small specialized model for repetitive work, an open model for high-volume or private workloads, and a frontier model only when difficult reasoning justifies the higher price. The market will therefore organize around intelligence per dollar rather than benchmark leadership alone.</p>
+<p>Kimi K3 captures both the promise and the limitation of this transition. Its emergence shows open-weight models can approach the frontier, weakening the assumption that advanced intelligence must come from two or three proprietary labs. But it also shows why "open" is not synonymous with "cheap." A model can have a low advertised token price and still be expensive per task if it generates too many tokens, requires more retries, uses tools poorly, or needs greater verification. The winning metric is not cost per token. It is cost per successfully completed, verified outcome: a correctly processed filing, a resolved customer-support case, or a code change accepted without repair.</p>
+<p>That is why the next important layer will be the inference control plane. Its job will not be merely to rent GPUs or resell model APIs. It will decide which model handles each task, how context is assembled, and when retrieval or fine-tuning is necessary. It will also decide how requests are batched and cached, when outputs must be verified, and when work should be escalated to a stronger model or a human. The strongest platforms will route across proprietary, open, fine-tuned, and local models while optimizing for latency, privacy, reliability, and cost. This looks less like a cloud reseller and more like an operating system for intelligence.</p>
+<p>For startups and enterprises, the moat will increasingly sit in the harness around the model. A general model does not understand a company's internal ontology, approval hierarchy, contracts, operating procedures, regulatory constraints, or error tolerance. That competence has to be built through proprietary context, tools, memory, permissions, workflow decomposition, evaluations, and human escalation. The model supplies general intelligence. The harness turns it into organizational capability. Companies that own a workflow deeply, and continually learn from real production failures, will be harder to replace than those whose only advantage is early access to a particular model.</p>
+<p>The winners of the inference phase will therefore be broader than frontier labs alone. Frontier companies will continue to push the capability boundary. But inference clouds, model-routing platforms, local-AI systems, vertically integrated technology companies, and domain-specific applications will industrialize those capabilities and make them economical. Falling inference prices will not necessarily reduce the size of the market. They can unlock longer contexts, continuous agents, machine-to-machine workflows, and applications that were previously too costly to run.</p>
+<p>History suggests that making a foundational layer cheaper does not shrink the technology market. It expands what can be built above it. Linux commoditized the operating system and helped enable cloud computing. Amazon transformed infrastructure it had developed for its retail operation into AWS. AWS generated approximately $129 billion in revenue and $45.6 billion in operating income in 2025. AI may follow the same pattern. Frontier labs will continue pushing the capability boundary. A much larger ecosystem will capture value by serving, routing, and embedding those capabilities into real work. The next defining AI companies may not train the largest model. They may be the ones that turn increasingly abundant intelligence into reliable, affordable, and ubiquitous products.</p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <div class="blog-post__share">
+          <a class="blog-post__share-btn" id="share-twitter" href="https://twitter.com/intent/tweet?text=AI%20Is%20Ready%20for%20Its%20Next%20Phase:%20Inference&amp;url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fai-ready-for-inference.html" target="_blank" rel="noopener">Share on X</a>
+          <a class="blog-post__share-btn" id="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fp22chanakya-iima.github.io%2Fportfolio%2Fblog%2Fai-ready-for-inference.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <button class="blog-post__share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!'})">Copy link</button>
+        </div>
+        <a href="../writing.html" class="blog-post__back">&larr; Back to all posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Chanakya Yadav. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav__theme-toggle');
+      if (toggle) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          const root = document.documentElement;
+          root.style.setProperty('--color-primary', '#F0F0F0');
+          root.style.setProperty('--color-secondary', '#A0A0A0');
+          root.style.setProperty('--color-accent', '#4D9FFF');
+          root.style.setProperty('--color-accent-hover', '#6BB3FF');
+          root.style.setProperty('--color-bg', '#111111');
+          root.style.setProperty('--color-bg-alt', '#1A1A1A');
+          root.style.setProperty('--color-muted', '#222222');
+          root.style.setProperty('--color-border', '#333333');
+          root.style.setProperty('--color-nav-bg', 'rgba(17,17,17,0.92)');
+          toggle.textContent = '\u2600\uFE0F';
+        }
+        toggle.addEventListener('click', () => {
+          const isDark = localStorage.getItem('theme') === 'dark';
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          location.reload();
+        });
+      }
+      const menuToggle = document.querySelector('.nav__mobile-toggle');
+      const links = document.querySelector('.nav__links');
+      if (menuToggle && links) {
+        menuToggle.addEventListener('click', () => links.classList.toggle('nav__links--open'));
+      }
+    });
+  </script>
+</body>
+</html>
