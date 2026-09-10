@@ -2,7 +2,7 @@
 title: "Contact — Chanakya Yadav"
 description: "Get in touch. Open to interesting problems, collaborations, and coffee chats."
 canonical: "https://p22chanakya-iima.github.io/contact.html"
-last-updated: "2026-08-28"
+last-updated: "2026-09-10"
 ---
 
 # Contact

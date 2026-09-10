@@ -2,7 +2,7 @@
 title: "Vibe Coded Fun Apps — Chanakya Yadav"
 description: "Projects and products I've built and shipped."
 canonical: "https://p22chanakya-iima.github.io/work.html"
-last-updated: "2026-08-28"
+last-updated: "2026-09-10"
 ---
 
 # Vibe Coded Fun Apps

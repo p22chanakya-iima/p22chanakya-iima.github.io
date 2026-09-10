@@ -2,11 +2,14 @@
 title: "Writing — Chanakya Yadav"
 description: "Thoughts on product management, building, and learning."
 canonical: "https://p22chanakya-iima.github.io/writing.html"
-last-updated: "2026-08-28"
+last-updated: "2026-09-10"
 ---
 
 # Writing
 
+- **How to Make Outcome-Based Pricing Work** (2026-09-10)
+  Outcome-based pricing needs a second product and operational systems to make it a success.
+  Link: https://p22chanakya-iima.github.io/blog/outcome-based-pricing-needs-a-second-product.html
 - **Inevitable Memory Doom** (2026-08-16)
   Email, photos, and enterprise software each ran the same cycle: make accumulation effortless, then monetize the overflow once it becomes unmanageable. Agentic coding is about to run it again — the real opportunity is a product that prevents the pile from forming, not one that sells more storage after it does.
   Link: https://p22chanakya-iima.github.io/blog/inevitable-memory-doom.html

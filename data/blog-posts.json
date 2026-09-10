@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "outcome-based-pricing-needs-a-second-product",
+      "title": "How to Make Outcome-Based Pricing Work",
+      "date": "2026-09-10",
+      "tags": [
+        "ai",
+        "pricing",
+        "strategy"
+      ],
+      "excerpt": "Outcome-based pricing needs a second product and operational systems to make it a success.",
+      "content_file": "blog/posts/outcome-based-pricing-needs-a-second-product.md",
+      "featured": true
+    },
+    {
       "id": "inevitable-memory-doom",
       "title": "Inevitable Memory Doom",
       "date": "2026-08-16",

@@ -2,7 +2,7 @@
 title: "About — Chanakya Yadav"
 description: "I'm a problem solver at heart. By day I'm an Associate Director at S&P Global. By night (and weekends), I vibe code side projects, read and write about anything. Writing is where I form my mind."
 canonical: "https://p22chanakya-iima.github.io/about.html"
-last-updated: "2026-08-28"
+last-updated: "2026-09-10"
 ---
 
 # About
