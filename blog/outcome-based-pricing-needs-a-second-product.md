@@ -16,7 +16,7 @@ AI takes both halves of that thesis apart at once. Seat pricing needed a human a
 
 ### Outcome-based pricing
 
-All of this leads to outcome-based pricing. Markets and industries are nudging vendors toward it. Vendors are being asked to take accountability for the outcomes their AI agents deliver, not just for shipping a feature. Tools like Claude and Codex have raised the floor on what someone can build without software skills, which accelerates the same trend: building software isn't enough anymore, vendors have to deliver outcomes. Markets are actively re-pricing SaaS firms with every hyperscaler launch, and that re-pricing is the market's own verdict on which vendors have made this shift and which haven't.
+All of this leads to outcome-based pricing. Markets and industries are nudging vendors toward it. Vendors are being asked to take accountability for the outcomes their AI agents deliver, not just for shipping a feature. Tools like Claude and Codex have raised the floor on what someone can build without software skills, which accelerates the same trend: building software isn't enough anymore, vendors have to deliver outcomes. Markets are actively re-pricing SaaS firms with every hyperscaler product launch. What a customer can build on their own is increasing, so they need a vendor that can go beyond features and deliver outcomes better than they could for themselves.
 
 ### Vendors become underwriters
 
