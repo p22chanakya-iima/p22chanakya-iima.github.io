@@ -8,7 +8,7 @@ last-updated: "2026-09-10"
 # Writing
 
 - **How to Make Outcome-Based Pricing Work** (2026-09-10)
-  Outcome-based pricing needs a second product and operational systems to make it a success.
+  Outcome-based pricing needs a second product, or three: a scoring system that qualifies customers by whether the outcome is achievable within a set timeframe without exceeding implementation cost, an event-level attribution engine that draws a causal line from what the agent completed to the outcome the customer actually stated, and a retention and reporting layer that lets customers manage their agents and keep improving intelligence-to-cost ratio — once creating agents is cheap and a company runs thousands of them, maintaining them is real value added, not rent-seeking.
   Link: https://p22chanakya-iima.github.io/blog/outcome-based-pricing-needs-a-second-product.html
 - **Inevitable Memory Doom** (2026-08-16)
   Email, photos, and enterprise software each ran the same cycle: make accumulation effortless, then monetize the overflow once it becomes unmanageable. Agentic coding is about to run it again — the real opportunity is a product that prevents the pile from forming, not one that sells more storage after it does.

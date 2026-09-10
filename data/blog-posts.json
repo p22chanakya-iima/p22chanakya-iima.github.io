@@ -9,7 +9,7 @@
         "pricing",
         "strategy"
       ],
-      "excerpt": "Outcome-based pricing needs a second product and operational systems to make it a success.",
+      "excerpt": "Outcome-based pricing needs a second product, or three: a scoring system that qualifies customers by whether the outcome is achievable within a set timeframe without exceeding implementation cost, an event-level attribution engine that draws a causal line from what the agent completed to the outcome the customer actually stated, and a retention and reporting layer that lets customers manage their agents and keep improving intelligence-to-cost ratio — once creating agents is cheap and a company runs thousands of them, maintaining them is real value added, not rent-seeking.",
       "content_file": "blog/posts/outcome-based-pricing-needs-a-second-product.md",
       "featured": true
     },

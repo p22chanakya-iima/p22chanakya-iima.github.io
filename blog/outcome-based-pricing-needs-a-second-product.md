@@ -1,12 +1,14 @@
 ---
 title: "How to Make Outcome-Based Pricing Work"
-description: "Outcome-based pricing needs a second product and operational systems to make it a success."
+description: "Outcome-based pricing needs a second product, or three: a scoring system that qualifies customers by whether the outcome is achievable within a set timeframe without exceeding implementation cost, an event-level attribution engine that draws a causal line from what the agent completed to the outcome the customer actually stated, and a retention and reporting layer that lets customers manage their agents and keep improving intelligence-to-cost ratio — once creating agents is cheap and a company runs thousands of them, maintaining them is real value added, not rent-seeking."
 canonical: "https://p22chanakya-iima.github.io/blog/outcome-based-pricing-needs-a-second-product.html"
 date: "2026-09-10"
 tags: [ai, pricing, strategy]
 ---
 
 ## How to Make Outcome-Based Pricing Work
+
+*Outcome-based pricing needs a second product, or three: a scoring system that qualifies customers by whether the outcome is achievable within a set timeframe without exceeding implementation cost, an event-level attribution engine that draws a causal line from what the agent completed to the outcome the customer actually stated, and a retention and reporting layer that lets customers manage their agents and keep improving intelligence-to-cost ratio — once creating agents is cheap and a company runs thousands of them, maintaining them is real value added, not rent-seeking.*
 
 Software pricing ran on one thesis for two decades. Serving one more user cost the vendor almost nothing, so charging per seat was really charging for access. If a tool made each employee more productive, the natural unit to price against was the employee using it. The more people doing the job meant more value extracted from the tool, which meant more seats sold.
 
